@@ -208,20 +208,20 @@ void loop() {
       isBufferFull = true;
   }
   if ( isBufferFull || bufIndex > 1 ) {
-    PM_A_Count = 0;
-    PM_B_Count = 0;
-    PM_C_Count = 0;
+    float sumA = 0;
+    float sumB = 0;
+    float sumC = 0;
     int numItems = N; // Number of items to average.
     if ( !isBufferFull )
       numItems = bufIndex;
     for(int i = 0; i < numItems; i++) {
-      PM_A_Count += PM_A_Buf[i];
-      PM_B_Count += PM_B_Buf[i];
-      PM_C_Count += PM_C_Buf[i];
+      sumA += PM_A_Buf[i];
+      sumB += PM_B_Buf[i];
+      sumC += PM_C_Buf[i];
     }
-    PM_A_Count = PM_A_Count / numItems;
-    PM_B_Count = PM_B_Count / numItems;
-    PM_C_Count = PM_C_Count / numItems;
+    PM_A_Count = (unsigned int)(sumA / numItems);
+    PM_B_Count = (unsigned int)(sumB / numItems);
+    PM_C_Count = (unsigned int)(sumC / numItems);
 
     // Print avg particle counts.
     #ifdef PRINT_AVG_COUNTS
@@ -245,4 +245,3 @@ void loop() {
   Serial.println("");
 
 } // END PROGRAM
-
