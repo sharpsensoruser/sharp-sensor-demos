@@ -10,3 +10,6 @@ Everything in this repository is based on information which is already publicly 
 ## Sensors
 * Sharp GP2Y1026AU0F Dust Sensor - [Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1026AU0F-Dust-Sensor) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo.ino)
 * Sharp GP2Y1030AU0F Dust Sensor - [Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1030AU0F-Dust-Sensor) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1030au0f_demo.ino)
+
+## See also
+* [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Sharp-Dust-Sensor-Connectors)
