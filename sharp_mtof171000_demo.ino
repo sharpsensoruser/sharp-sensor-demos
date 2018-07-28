@@ -17,7 +17,7 @@
 // Flag to indicate whether to send a command to TOF module.
 static bool doSend = true;
 
-// Use software serial port for communicating with GP2Y1030.
+// Use software serial port for communicating with MTOF171000.
 // If you have Arduino Mega 2560, you can use hardware serial port
 // instead like Serial1, etc.
 #define rxPin 10
