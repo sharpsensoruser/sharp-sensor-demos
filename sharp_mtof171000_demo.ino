@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-// Sharp MTOF171000 TOF Module Demo
+// Sharp MTOF171000 TOF Sensor Module Demo
 //
 // Board Connection:
 //   Arduino   MTOF171000
