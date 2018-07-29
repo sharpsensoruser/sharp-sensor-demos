@@ -10,7 +10,7 @@ Everything in this repository is based on information which is already publicly 
 ## Sensors
 * Sharp GP2Y1026AU0F Dust Sensor - [Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1026AU0F-Dust-Sensor) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo/sharp_gp2y1026au0f_demo.ino)
 * Sharp GP2Y1030AU0F Dust Sensor - [Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1030AU0F-Dust-Sensor) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1030au0f_demo/sharp_gp2y1030au0f_demo.ino)
-* Sharp MTOF171000 TOF Sensor Module - [Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-MTOF171000-Time-of-Flight-Sensor-Module) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_mtof171000_demo/sharp_mtof171000_demo.ino)
+* Sharp MTOF171000C0 TOF Sensor Module - [Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-MTOF171000C0-Time-of-Flight-Sensor-Module) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_mtof171000c0_demo/sharp_mtof171000c0_demo.ino)
 
 ## See also
 * [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Sharp-Dust-Sensor-Connectors)
