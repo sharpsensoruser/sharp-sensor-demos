@@ -19,7 +19,7 @@
 #define USE_AVG
 
 // Arduino pin numbers.
-const int sharpLEDPin = 12;   // Arduino digital pin 7 connect to sensor LED.
+const int sharpLEDPin = 7;   // Arduino digital pin 7 connect to sensor LED.
 const int sharpVoPin = A5;   // Arduino analog pin 5 connect to sensor Vo.
 
 // For averaging last N raw voltage readings.
