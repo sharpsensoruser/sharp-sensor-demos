@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-// Sharp GP2Y10140AU0F Dust Sensor Demo
+// Sharp GP2Y1014AU0F Dust Sensor Demo
 //
 // Board Connection:
 //   GP2Y1014    Arduino
