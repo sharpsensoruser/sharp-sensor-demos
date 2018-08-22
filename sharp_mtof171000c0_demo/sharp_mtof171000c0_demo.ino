@@ -109,8 +109,8 @@ void loop() {
 
   // Read and verify the CheckSum.
   int checksum = readSerial();
-  int testsum = cmd + dataReg + dataLength + distHi + distLo;
-  if ( testsum != checksum )
+  unsigned int testsum = cmd + dataReg + dataLength + distHi + distLo;
+  if ( checksum != (testsum & 0xff) )
     return;
     
   // Print the distance to the Serial Monitor.
