@@ -14,9 +14,6 @@
 
 #include <SoftwareSerial.h>
 
-// Flag to indicate whether to send a command to TOF module.
-static bool doSend = true;
-
 // Use software serial port for communicating with MTOF171000C0.
 // If you have Arduino Mega 2560, you can use hardware serial port
 // instead like Serial1, etc.
@@ -73,10 +70,7 @@ void setup() {
 // Arduino main loop.
 void loop() {
   // Send the request for a distance measurement.
-  if ( doSend ) {
-    send_CMD_RD_MM();
-    doSend = false;
-  }
+  send_CMD_RD_MM();
   
   // Look for 1st Identification Byte.
   if ( readSerial() != 0x55 )
@@ -118,7 +112,6 @@ void loop() {
   Serial.print("Distance = ");
   Serial.print(distMM);
   Serial.println("mm");
-  doSend = true;
   
 } // END PROGRAM
 
