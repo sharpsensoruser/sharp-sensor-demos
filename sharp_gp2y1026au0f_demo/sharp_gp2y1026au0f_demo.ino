@@ -63,8 +63,8 @@ void loop() {
     return;
   
   // Verify the checksum.
-  int testSum = VoutH + VoutL + VrefH + VrefL;
-  if ( testSum != checksum )
+  unsigned int testSum = VoutH + VoutL + VrefH + VrefL;
+  if ( checksum != (testSum & 0xff) )
     return;
 
   // Print the data values.
