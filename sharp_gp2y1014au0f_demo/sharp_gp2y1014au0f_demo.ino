@@ -112,7 +112,7 @@ void loop() {
 
   // Compute the output voltage in Volts.
   Vo = Vo / 1024.0 * 5.0;
-  printFValue("Vo", Vo, "V");
+  printFValue("Vo", Vo*1000.0, "mV");
 
   // Convert to Dust Density in units of ug/m3.
   float dV = Vo - Voc;
