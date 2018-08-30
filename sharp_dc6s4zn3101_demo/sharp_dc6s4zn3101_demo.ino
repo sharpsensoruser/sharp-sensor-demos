@@ -24,9 +24,11 @@ static SoftwareSerial mySerial(PIN_RX, PIN_TX);
 // Payload types.
 #define PAYLOAD_TYPE_WAVEFORMIQDATA 1
 #define PAYLOAD_TYPE_SIGNALMEANVALUE 5
+#define PAYLOAD_TYPE_ALARMS 11
 
 // Demo program options.
 #define PRINT_READ_SERIAL 1
+#define PRINT_SEND_SERIAL 1
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -67,7 +69,8 @@ int readSerial() {
   return data;
 }
 
-// Read the Payload Value into a buffer.
+// Read the payload value into a buffer.
+// Return false if error.
 bool readPayloadValue(unsigned char* buf, int len) {
   for(int i = 0; i < len; i++) {
     int data = readSerial();
@@ -78,37 +81,77 @@ bool readPayloadValue(unsigned char* buf, int len) {
   return true;
 }
 
-// Read Payload Type 5 - Signal Mean Value.
-void readPayloadSignalMeanValue() {
-  // Read Payload Length. Sometimes the length is read as 1 which
-  // contradicts the specification.
+// Read waveform IQ data.
+void readWaveformIQData() {
+  
+}
+
+// Read signal mean value.
+void readSignalMeanValue() {
+  // Read payload length. Length should be 2 but sometimes reports as only 1.
   int payloadLength = readSerial();
   if ( payloadLength != 2 )
     return;
     
-  // Read Payload Value.
+  // Read payload value.
   unsigned char buf[2];
   if ( !readPayloadValue(buf, 2) )
     return false;
   short payloadValue = ((short)buf[0])<<8 | (short)buf[1];
 
-  // Read Payload Sequence
-  int payloadSequence = readSerial();
-  if ( payloadSequence != 0 )
+  // Read sequence number.
+  int sequence = readSerial();
+  if ( sequence != 0 )
     return;
     
-  // Read Payload Checksum and check it.
-  int payloadChecksum = readSerial();
+  // Read checksum and verify it.
+  int checksum = readSerial();
   int calcChecksum = calculateChecksum(buf, 2);
-  if ( payloadChecksum != calcChecksum )
+  if ( checksum != calcChecksum )
     return;
     
-  // OK to print now that data packet is validated.
+  // Print info now that data packet is validated.
   printValue("Type", PAYLOAD_TYPE_SIGNALMEANVALUE);
   printValue("Length", payloadLength);
   printValue("SignalMeanValue", payloadValue);
-  printValue("Sequence", payloadSequence);
-  printValue("Checksum", payloadChecksum, true); 
+  printValue("Sequence", sequence);
+  printValue("Checksum", checksum, true); 
+  Serial.println("");
+}
+
+// Read alarms.
+void readAlarms() {
+  // Read payload length. Length should be 2 but sometimes reports as only 1.
+  int payloadLength = readSerial();
+  if ( payloadLength != 2 )
+    return;
+    
+  // Read payload value.
+  unsigned char buf[2];
+  if ( !readPayloadValue(buf, 2) )
+    return false;
+  short alarm0 = (buf[0] & 0xf0)>>4;
+  short alarm1 = (buf[0] & 0x0f);
+  short alarm2 = (buf[1] & 0xf0)>>4;
+  short alarm3 = (buf[1] & 0x0f);
+  
+  // Read sequence number.
+  int sequence = readSerial();
+  if ( sequence != 0 )
+    return;
+    
+  // Read checksum and verify it.
+  int checksum = readSerial();
+  int calcChecksum = calculateChecksum(buf, 2);
+  if ( checksum != calcChecksum )
+    return;
+    
+  // Print info now that data packet is validated.
+  printValue("Type", PAYLOAD_TYPE_ALARMS);
+  printValue("Alarm0", alarm0);
+  printValue("Alarm1", alarm1);
+  printValue("Alarm2", alarm2);
+  printValue("Alarm3", alarm3, true); 
   Serial.println("");
 }
 
@@ -117,6 +160,14 @@ void readPayloadSignalMeanValue() {
 // Helper function to send data through the software serial port.
 void sendSerial(unsigned char data) {
   mySerial.write(data);
+
+  #ifdef PRINT_SEND_SERIAL
+  Serial.print("Send: ");
+  Serial.print(data);
+  Serial.print(" (0x");
+  Serial.print(data, HEX);
+  Serial.println(")");
+  #endif // PRINT_SEND_SERIAL
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -135,10 +186,14 @@ void setup() {
 
 // Arduino main loop.
 void loop() {
-  // Read Payload Type.
-  int payloadType = readSerial();    
-  if ( payloadType == PAYLOAD_TYPE_SIGNALMEANVALUE ) {
-    readPayloadSignalMeanValue();
+  // Read payload type and handle accordingly.
+  int payloadType = readSerial();
+  if ( payloadType == PAYLOAD_TYPE_WAVEFORMIQDATA ) {
+    readWaveformIQData(); 
+  } else if ( payloadType == PAYLOAD_TYPE_SIGNALMEANVALUE ) {
+    readSignalMeanValue();
+  } else if ( payloadType == PAYLOAD_TYPE_ALARMS ) {
+    readAlarms();
   }
   
 } // END PROGRAM
