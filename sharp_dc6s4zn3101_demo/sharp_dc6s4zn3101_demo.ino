@@ -257,12 +257,13 @@ void sendSerial(const char* data) {
   Serial1.write(data, strlen(data));
   Serial1.write(0x0d);
   #endif // USE_SOFTWARE_SERIAL
-  delay(10);
   
   #ifdef PRINT_SEND_SERIAL
   Serial.print("Send: ");
   Serial.println(data);
   #endif // PRINT_SEND_SERIAL
+
+  delay(10);
 }
 
 /////////////////////////////////////////////////////////////////////////////
