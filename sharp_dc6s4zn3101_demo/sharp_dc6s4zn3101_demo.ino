@@ -2,11 +2,11 @@
 // Sharp DC6S4ZN3101 Microwave Sensor Module Demo
 //
 // Board Connection:
-//   Arduino   DC6S4ZN3101
-//   3.3V      VCC
-//   GND       GND
-//   10pin     TXD
-//   11pin     RXD
+//   Arduino Mega   DC6S4ZN3101
+//   3.3V           VCC
+//   GND            GND
+//   RX1-pin19      TXD
+//   TX1-pin18      RXD
 //
 // Serial monitor setting:
 //   115200 baud
@@ -17,7 +17,8 @@
 // Demo program options.
 #define PRINT_READ_SERIAL
 #define PRINT_SEND_SERIAL
-//#define USE_SOFTWARE_SERIAL
+#define USE_SOFTWARE_SERIAL
+#define VERIFY_CHECKSUM
 
 // Payload types.
 #define PAYLOAD_TYPE_WAVEFORMDATA 1
@@ -65,7 +66,7 @@ void printTextValue(String text, String value, bool isLast = false) {
 
 /////////////////////////////////////////////////////////////////////////////
 
-// Read data from software serial port.
+// Read data from serial port.
 int readSerial() {
   #ifdef USE_SOFTWARE_SERIAL
   while (!mySerial.available()) {}
@@ -98,11 +99,11 @@ bool readPayloadValue(unsigned char* buf, int len) {
   return true;
 }
 
-// Read waveform IQ data. Waveform data does not adhere
-// to 2018/06/20 UART spec. It does not seem to send
-// checksum most of the time.
+// Read waveform channel I/Q data. Waveform data does not
+// seem to adhere to 2018/06/20 UART spec. It does not
+// send checksum most of the time.
 void readWaveformData() {
-// Read payload length. Length should be 4.
+  // Read payload length. Length should be 4 bytes.
   int payloadLength = readSerial();
   if ( payloadLength != 4 )
     return;
@@ -115,29 +116,35 @@ void readWaveformData() {
   short waveQ = ((short)buf[2])<<8 | (short)buf[3];
 
   // Read sequence number.
-  /*int sequence = readSerial();
+  int sequence = readSerial();
   if ( sequence < 0 || sequence > 127 )
-    return;*/
+    return;
     
   // Read checksum and verify it.
-  /*int checksum = readSerial();
+  #ifdef VERIFY_CHECKSUM
+  int checksum = readSerial();
   int calcChecksum = calculateChecksum(buf, 4);
   if ( checksum != calcChecksum )
-    return;*/
+    return;
+  #endif // VERIFY_CHECKSUM
   
   // Print info now that data packet is validated.
   printValue("Type", PAYLOAD_TYPE_WAVEFORMDATA);
   printValue("Length", payloadLength);
   printValue("WaveI", waveI);
-  printValue("WaveQ", waveQ, true);
-  /*printValue("Sequence", sequence);
-  printValue("Checksum", checksum, true);*/
+  printValue("WaveQ", waveQ);
+  #ifdef VERIFY_CHECKSUM
+  printValue("Sequence", sequence);
+  printValue("Checksum", checksum, true);
+  #else
+  printValue("Sequence", sequence, true);
+  #endif // VERIFY_CHECKSUM
   Serial.println("");
 }
 
 // Read signal mean value.
 void readSignalMeanValue() {
-  // Read payload length. Length should be 2 but sometimes reports as only 1.
+  // Read payload length. Length should be 2 bytes.
   int payloadLength = readSerial();
   if ( payloadLength != 2 )
     return;
@@ -154,23 +161,28 @@ void readSignalMeanValue() {
     return;
     
   // Read checksum and verify it.
+  #ifdef VERIFY_CHECKSUM
   int checksum = readSerial();
   int calcChecksum = calculateChecksum(buf, 2);
   if ( checksum != calcChecksum )
     return;
-    
+  #endif // VERIFY_CHECKSUM
+  
   // Print info now that data packet is validated.
   printValue("Type", PAYLOAD_TYPE_SIGNALMEANVALUE);
   printValue("Length", payloadLength);
   printValue("SignalMeanValue", payloadValue);
+  #ifdef VERIFY_CHECKSUM
   printValue("Sequence", sequence);
-  printValue("Checksum", checksum, true); 
+  printValue("Checksum", checksum, true);
+  #else
+  printValue("Sequence", sequence, true);
+  #endif // VERIFY_CHECKSUM 
   Serial.println("");
 }
 
 // Read debug information.
-// Debug info data packet does not seem to adhere to 2018/06/20 UART spec.
-// It does not send sequence number or checksum so I've had to comment it out.
+// Debug info data packet does not seem to sequence number or checksum.
 void readDebugInfo() {
   // Read payload length which should be from 1 to 32 bytes.
   int payloadLength = readSerial();
@@ -182,30 +194,17 @@ void readDebugInfo() {
   memset(buf, 0, 33);
   if ( !readPayloadValue(buf, payloadLength) )
     return false;
-
-  // Read sequence number.
-  /*int sequence = readSerial();
-  if ( sequence != 0 )
-    return;*/
-    
-  // Read checksum and verify it.
-  /*int checksum = readSerial();
-  int calcChecksum = calculateChecksum(buf, payloadLength);
-  if ( checksum != calcChecksum )
-    return;*/
   
-  // Print info now that data packet is validated.
+  // Print info.
   printValue("Type", PAYLOAD_TYPE_DEBUGINFO);
   printValue("Length", payloadLength);
   printTextValue("DebugInfo", buf, true);
-  /*printValue("Sequence", sequence);
-  printValue("Checksum", checksum, true);*/
   Serial.println("");
 }
 
 // Read alarms.
 void readAlarms() {
-  // Read payload length. Length should be 2 but sometimes reports as only 1.
+  // Read payload length. Length should be 2 bytes.
   int payloadLength = readSerial();
   if ( payloadLength != 2 )
     return;
@@ -218,18 +217,22 @@ void readAlarms() {
   short alarm1 = (buf[0] & 0x0f);
   short alarm2 = (buf[1] & 0xf0)>>4;
   short alarm3 = (buf[1] & 0x0f);
-  
+  if ( alarm0 > 1 || alarm1 > 1 || alarm2 > 1 || alarm3 > 1 )
+    return;
+    
   // Read sequence number.
   int sequence = readSerial();
   if ( sequence != 0 )
     return;
     
   // Read checksum and verify it.
+  #ifdef VERIFY_CHECKSUM
   int checksum = readSerial();
   int calcChecksum = calculateChecksum(buf, 2);
   if ( checksum != calcChecksum )
     return;
-    
+  #endif // VERIFY_CHECKSUM
+  
   // Print info now that data packet is validated.
   printValue("Type", PAYLOAD_TYPE_ALARMS);
   printValue("Length", payloadLength);
@@ -237,8 +240,12 @@ void readAlarms() {
   printValue("Alarm1", alarm1);
   printValue("Alarm2", alarm2);
   printValue("Alarm3", alarm3);
+  #ifdef VERIFY_CHECKSUM
   printValue("Sequence", sequence);
   printValue("Checksum", checksum, true);
+  #else
+  printValue("Sequence", sequence, true);
+  #endif // VERIFY_CHECKSUM
   Serial.println("");
 }
 
@@ -269,14 +276,14 @@ void setup() {
   // Start the hardware serial port for the serial monitor.
   Serial.begin(115200);
 
-  // Start the software serial port for communicating with DC6S4ZN3101.
+  // Start the serial port for communicating with DC6S4ZN3101.
   #ifdef USE_SOFTWARE_SERIAL
   mySerial.begin(115200);
   #else
   Serial1.begin(115200);
   #endif // USE_SOFTWARE_SERIAL
   
-  // Set waveform mode (wave off / wave 100 / wave 500).
+  // Set waveform mode off.
   sendSerial("wave off");
   
   // Set alarm0 threshold to 400.
@@ -294,7 +301,7 @@ void setup() {
   // Send request for firmware version.
   sendSerial("ver");
 
-  // Set waveform mode (wave off / wave 100 / wave 500).
+  // Set waveform mode on (wave 100 / wave 500).
   //sendSerial("wave 100");
 }
 
