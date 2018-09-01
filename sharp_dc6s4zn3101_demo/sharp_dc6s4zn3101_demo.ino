@@ -2,11 +2,11 @@
 // Sharp DC6S4ZN3101 Microwave Sensor Module Demo
 //
 // Board Connection:
-//   Arduino Mega   DC6S4ZN3101   Arduino Uno
-//   3.3V           VCC           3.3V          
-//   GND            GND           GND
-//   RX1-pin19      TXD           pin10
-//   TX1-pin18      RXD           pin11
+//   Arduino Mega   DC6S4ZN3101
+//   3.3V           VCC
+//   GND            GND
+//   RX1-pin19      TXD
+//   TX1-pin18      RXD
 //
 // Serial monitor setting:
 //   115200 baud
@@ -99,7 +99,9 @@ bool readPayloadValue(unsigned char* buf, int len) {
   return true;
 }
 
-// Read waveform channel I/Q data.
+// Read waveform channel I/Q data. Waveform data does not
+// seem to adhere to 2018/06/20 UART spec. It does not
+// send checksum most of the time.
 void readWaveformData() {
   // Read payload length. Length should be 4 bytes.
   int payloadLength = readSerial();
@@ -180,6 +182,7 @@ void readSignalMeanValue() {
 }
 
 // Read debug information.
+// Debug info data packet does not seem to sequence number or checksum.
 void readDebugInfo() {
   // Read payload length which should be from 1 to 32 bytes.
   int payloadLength = readSerial();
@@ -248,7 +251,7 @@ void readAlarms() {
 
 /////////////////////////////////////////////////////////////////////////////
 
-// Helper function to send data through the serial port.
+// Helper function to send data through the software serial port.
 void sendSerial(const char* data) {
   #ifdef USE_SOFTWARE_SERIAL
   mySerial.write(data, strlen(data));
@@ -257,13 +260,12 @@ void sendSerial(const char* data) {
   Serial1.write(data, strlen(data));
   Serial1.write(0x0d);
   #endif // USE_SOFTWARE_SERIAL
+  delay(10);
   
   #ifdef PRINT_SEND_SERIAL
   Serial.print("Send: ");
   Serial.println(data);
   #endif // PRINT_SEND_SERIAL
-
-  delay(10);
 }
 
 /////////////////////////////////////////////////////////////////////////////
