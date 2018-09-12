@@ -11,14 +11,8 @@
 //   9600 baud
 /////////////////////////////////////////////////////////////////////////////
 
-// Choose program options.
-//#define PRINT_RAW_DATA
-#define USE_AVG
-
 // Arduino pin numbers.
-const int sharpVoPin = A0;   // Arduino analog pin 5 connect to sensor Vo.
-  
-/////////////////////////////////////////////////////////////////////////////
+const int sharpVoPin = A0;   // Arduino analog pin 0 connect to sensor Vo.
 
 // Helper functions to print a data value to the serial monitor.
 void printValue(String text, unsigned int value, bool isLast = false) {
@@ -29,7 +23,6 @@ void printValue(String text, unsigned int value, bool isLast = false) {
     Serial.print(", ");
   }
 }
-
 void printFValue(String text, float value, String units, bool isLast = false) {
   Serial.print(text);
   Serial.print("=");
@@ -49,19 +42,23 @@ void setup() {
   Serial.println("");
   Serial.println("GP2Y0AF15X Demo");
   Serial.println("===============");
-  
-  // Wait 25.2ms for stable measurements.
-  delayMicroseconds(25200);
+
+  // Wait at least 25.2ms for the first measurement to complete.
+  delay(26);
 }
 
 // Arduino main loop.
-void loop() {  
-  // Read the output voltage. This operation takes around 100 microseconds.
+void loop() {
+  // Wait 100ms between readings.
+  delay(100);
+  
+  // Read the output voltage.
   int VoRaw = analogRead(sharpVoPin);
+  printValue("VoRaw", VoRaw);
 
   // Compute the output voltage in Volts.
-  float Vo = Vo / 1024.0 * 5.0;
-  printFValue("Vo", Vo*1000.0, "mV");
+  float Vo = (5.0 * VoRaw) / 1024.0;
+  printFValue("Vo", Vo, "V");
 
   // Convert to Distance in units of mm.
   const float a = 54.375;
@@ -74,4 +71,3 @@ void loop() {
   Serial.println("");
   
 } // END PROGRAM
-
