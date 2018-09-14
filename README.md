@@ -25,10 +25,10 @@ Everything in this repository is based on information which is already publicly 
 
 ## Coming Soon
 
-| Part Number | Description |
-|-------------|-------------|
-|A1DU5P2CP005B|VOCs Sensor Module (TVOC, CO2, Formaldehyde, Ethanol)|
-|ENS210|Humidity Sensor Module (Relative Humidity, Temperature)|
+| Part Number | Description |Documentation|
+|-------------|-------------|-------------|
+|A1DU5P2CP005B|VOCs Sensor Module (TVOC, CO2, Formaldehyde, Ethanol)|[Prelim. Spec](http://www.socle-tech.com/SHARP_sensorModule_VoC.php)|
+|ENS210|Humidity Sensor Module (Relative Humidity, Temperature)|[Prelim. Spec](http://www.socle-tech.com/SHARP_sensorModule_Humidity&Temperature.php)|
 
 ## See also
 * [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Sharp-Dust-Sensor-Connectors)
