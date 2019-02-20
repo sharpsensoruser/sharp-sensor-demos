@@ -58,6 +58,7 @@ uint32_t readMeasurement(uint8_t regAddress)
   
   return measurement;
 }
+
 /////////////////////////////////////////////////////////////////////////////
 
 void setup() {
