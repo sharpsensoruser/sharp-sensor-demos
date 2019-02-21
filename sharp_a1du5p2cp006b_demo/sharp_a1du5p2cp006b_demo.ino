@@ -61,6 +61,7 @@ uint32_t readMeasurement(uint8_t regAddress)
 
 /////////////////////////////////////////////////////////////////////////////
 
+// Arduino setup function.
 void setup() {
   // Start the hardware serial port for the serial monitor.
   Serial.begin(9600);
@@ -78,8 +79,7 @@ void setup() {
   writeRegister(REGISTER_ADDRESS_SENS_RUN, 0x00);
 }
 
-/////////////////////////////////////////////////////////////////////////////
-
+// Arduino main loop.
 void loop() {  
   // Start a measurement for both humidity and temperature.
   writeRegister(REGISTER_ADDRESS_SENS_START, 0x03);
