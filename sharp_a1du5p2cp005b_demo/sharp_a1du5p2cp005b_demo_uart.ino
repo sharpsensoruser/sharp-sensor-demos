@@ -12,7 +12,7 @@
 //   Pin 10          Pin 5 - TX
 //   GND             Pin 6 - GND
 //   
-// Reference: https://mnsenstech.com
+// Reference: http://www.mnsenstech.com
 /////////////////////////////////////////////////////////////////////////////
 
 #include <SoftwareSerial.h>
