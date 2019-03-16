@@ -144,7 +144,6 @@ void loop() {
   Serial.println("");
 
   // Convert to different concentration units (ug/m3).
-  // For this sensor model, 1 ppb is equal to 1.8 ug/m3.
   printFValue("HCHO(ug/m3)", convertUnits(hcho, MOLECULAR_WEIGHT_HCHO));
   printFValue("TVOC(ug/m3)", convertUnits(tvoc, MOLECULAR_WEIGHT_TVOC), true);
   Serial.println("");
