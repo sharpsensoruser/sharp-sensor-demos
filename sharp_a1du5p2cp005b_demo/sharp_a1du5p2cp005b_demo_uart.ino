@@ -17,6 +17,10 @@
 
 #include <SoftwareSerial.h>
 
+// Molecular weights for units conversion.
+#define MOLECULAR_WEIGHT_HCHO 30
+#define MOLECULAR_WEIGHT_TVOC 44
+
 // Use software serial port for communicating with sensor module.
 // If you have Arduino Mega 2560, you can use hardware serial port
 // instead like Serial1, etc.
@@ -61,6 +65,11 @@ String decodeStatus(uint32_t stat) {
   else if ( stat == 0x02 )
     statusText = "2(Error)";
   return statusText;  
+}
+
+// Convert ppb to ug/m3 units.
+float convertUnits(uint32_t ppb, float molecularWeight) {
+  return 0.0409 * ppb * molecularWeight;
 }
 
 // Helper function to print a data value to the serial monitor.
@@ -132,9 +141,8 @@ void loop() {
   Serial.println("");
 
   // Convert to different concentration units (ug/m3).
-  // For this sensor model, 1 ppb is equal to 1.8 ug/m3.
-  printFValue("HCHO(ug/m3)", hcho*1.8f);
-  printFValue("TVOC(ug/m3)", tvoc*1.8f, true);
+  printFValue("HCHO(ug/m3)", convertUnits(hcho, MOLECULAR_WEIGHT_HCHO));
+  printFValue("TVOC(ug/m3)", convertUnits(tvoc, MOLECULAR_WEIGHT_TVOC), true);
   Serial.println("");
   Serial.println("---");
 
