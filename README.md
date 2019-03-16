@@ -20,6 +20,7 @@ Everything in this repository is based on information which is already publicly 
 
 | Part Number | Description | Documentation | Source Code |
 |-------------|-------------|-------|------|
+|A1DU5P2CP005B|VOCs Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-A1DU5P2CP005B-VOCs-Sensor-Module)|[I2C](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp005b_demo/sharp_a1du5p2cp005b_demo_i2c.ino) / [UART](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp005b_demo/sharp_a1du5p2cp005b_demo_uart.ino)|
 |A1DU5P2CP006B|Humidity Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-A1DU5P2CP006B-Humidity-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp006b_demo/sharp_a1du5p2cp006b_demo.ino)|
 |DC6S4ZN3101|Microwave Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-DC6S4ZN3101-Microwave-Motion-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_dc6s4zn3101_demo/sharp_dc6s4zn3101_demo.ino)|
 |MTOF171000C0|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-MTOF171000C0-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_mtof171000c0_demo/sharp_mtof171000c0_demo.ino)|
@@ -28,8 +29,7 @@ Everything in this repository is based on information which is already publicly 
 
 | Part Number | Description |Documentation|
 |-------------|-------------|-------------|
-|A1DU5P2CP005B|VOCs Sensor Module (TVOC, CO2, Formaldehyde, Ethanol)|[Prelim. Spec](http://www.socle-tech.com/SHARP_sensorModule_VoC.php)|
-|GP2Y1040AU0F|Laser Dust Sensor (particle counter, built-in fan, PM1.0/2.5/10, high accuracy)|TBD|
+|GP2Y1040AU0F|VCSEL Laser Dust Sensor (particle counter, built-in fan, PM1.0/2.5/10, high accuracy)|TBD|
 
 ## See also
 * [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Sharp-Dust-Sensor-Connectors)
