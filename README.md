@@ -12,9 +12,9 @@ Everything in this repository is based on information which is already publicly 
 | Part Number | Description | Documentation | Source Code |
 |-------------|-------------|-------|------|
 |GP2Y0AF15X|Distance Measuring Sensor|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y0AF15X-Distance-Measuring-Sensor) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0af15x_demo/sharp_gp2y0af15x_demo.ino)|
-|GP2Y1014AU0F|PM / Dust Sensor|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1014AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1014au0f_demo/sharp_gp2y1014au0f_demo.ino)|
-|GP2Y1026AU0F|PM / Dust Sensor|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1026AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo/sharp_gp2y1026au0f_demo.ino)|
-|GP2Y1030AU0F|PM / Dust Sensor|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1030AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1030au0f_demo/sharp_gp2y1030au0f_demo.ino)|
+|GP2Y1014AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1014AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1014au0f_demo/sharp_gp2y1014au0f_demo.ino)|
+|GP2Y1026AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1026AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo/sharp_gp2y1026au0f_demo.ino)|
+|GP2Y1030AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1030AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1030au0f_demo/sharp_gp2y1030au0f_demo.ino)|
 
 ## Modules
 
