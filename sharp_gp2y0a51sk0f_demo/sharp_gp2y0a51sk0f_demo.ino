@@ -60,7 +60,11 @@ void loop() {
   float Vo = (5.0 * VoRaw) / 1024.0;
   printFValue("Vo", Vo, "V");
 
-  // Convert to Distance in units of mm.
+  // Convert to Distance in units of mm
+  // by approximating datasheet graph
+  // using equation of form: y = a/x + b
+  // and two (x,y) points on the graph:
+  // (30mm, 1.68V) and (150mm, 0.39V)
   const float a = 48.375;
   const float b = 0.0675;
   float dist = 0;
