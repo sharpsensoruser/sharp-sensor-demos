@@ -11,7 +11,8 @@ Everything in this repository is based on information which is already publicly 
 
 | Part Number | Description | Documentation | Source Code |
 |-------------|-------------|-------|------|
-|GP2Y0A51SK0F|Distance Measuring Sensor|[Datasheet](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Distance%20Measuring%20Sensor/Analog%20Output/gp2y0a51sk_e.pdf) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0a51sk0f_demo/sharp_gp2y0a51sk0f_demo.ino)|
+|GP2Y0A41SK0F|Distance Measuring Sensor|[Datasheet](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Distance%20Measuring%20Sensor/Analog%20Output/gp2y0a41sk_e.pdf) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0a41sk0f_demo/sharp_gp2y0a41sk0f_demo.ino)|
+|GP2Y0A51SK0F|Distance Measuring Sensor|[Datasheet](http://www.socle-http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Distance%20Measuring%20Sensor/Analog%20Output/gp2y0a41sk_e.pdftech.com/doc/IC%20Channel%20Product/Sensors/Distance%20Measuring%20Sensor/Analog%20Output/gp2y0a51sk_e.pdf) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0a51sk0f_demo/sharp_gp2y0a51sk0f_demo.ino)|
 |GP2Y0AF15X|Distance Measuring Sensor|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y0AF15X-Distance-Measuring-Sensor) | [Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0af15x_demo/sharp_gp2y0af15x_demo.ino)|
 |GP2Y1014AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1014AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1014au0f_demo/sharp_gp2y1014au0f_demo.ino)|
 |GP2Y1026AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1026AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo/sharp_gp2y1026au0f_demo.ino)|
@@ -35,3 +36,4 @@ Everything in this repository is based on information which is already publicly 
 ## See also
 * [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Sharp-Dust-Sensor-Connectors)
 * [Using the Sharp Microwave Sensor Demo Kit](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Using-the-Sharp-Microwave-Sensor-Demo-Kit)
+* [Distance Sensor Selection Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Distance%20Sensor%20Selection.pdf)
