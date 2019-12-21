@@ -109,7 +109,7 @@ void readWaveformData() {
   // Read payload value.
   unsigned char buf[4];
   if ( !readPayloadValue(buf, 4) )
-    return false;
+    return;
   short waveI = ((short)buf[0])<<8 | (short)buf[1];
   short waveQ = ((short)buf[2])<<8 | (short)buf[3];
 
@@ -150,7 +150,7 @@ void readSignalMeanValue() {
   // Read payload value.
   unsigned char buf[2];
   if ( !readPayloadValue(buf, 2) )
-    return false;
+    return;
   short payloadValue = ((short)buf[0])<<8 | (short)buf[1];
 
   // Read sequence number.
@@ -190,7 +190,7 @@ void readDebugInfo() {
   unsigned char buf[33];
   memset(buf, 0, 33);
   if ( !readPayloadValue(buf, payloadLength) )
-    return false;
+    return;
   
   // Print info.
   printValue("Type", PAYLOAD_TYPE_DEBUGINFO);
@@ -209,7 +209,7 @@ void readAlarms() {
   // Read payload value.
   unsigned char buf[2];
   if ( !readPayloadValue(buf, 2) )
-    return false;
+    return;
   short alarm0 = (buf[0] & 0xf0)>>4;
   short alarm1 = (buf[0] & 0x0f);
   short alarm2 = (buf[1] & 0xf0)>>4;
