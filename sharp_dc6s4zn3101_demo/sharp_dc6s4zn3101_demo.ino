@@ -195,7 +195,7 @@ void readDebugInfo() {
   // Print info.
   printValue("Type", PAYLOAD_TYPE_DEBUGINFO);
   printValue("Length", payloadLength);
-  printTextValue("DebugInfo", buf, true);
+  printTextValue("DebugInfo", (const char*)buf, true);
   Serial.println("");
 }
 
