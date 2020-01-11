@@ -9,3 +9,7 @@ Developed using Visual Studio 2019.
 
 This is a demo only, not intended for production use.
 
+## Build Notes
+
+There is a NuGet package in the packages folder which needs to be unzipped into the folder.
+
