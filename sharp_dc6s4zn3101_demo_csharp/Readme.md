@@ -5,11 +5,13 @@ This is a C#/.NET Windows Forms application for controlling Sharp DC6S4ZN3101 Mi
 
 The application has various options for logging the UART data to a log file and to the screen.
 
-Developed using Visual Studio 2019.
-
 This is a demo only, not intended for production use.
+
+The bin\Release folder contains an EXE which you can run without having to build the program.
 
 ## Build Notes
 
-There is a NuGet package in the packages folder which needs to be unzipped into the folder.
+Developed using Visual Studio 2019. 
+
+There is a NuGet package (zip file) in the packages folder which needs to be unzipped into the folder.
 
