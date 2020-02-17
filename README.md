@@ -31,6 +31,8 @@ Everything in this repository is based on information which is already publicly 
 
 | Part Number | Description |Documentation|
 |-------------|-------------|-------------|
+|FSTOF2002C0U|Time-of-Flight Sensor Module (UART, long range up to 240cm, Sharp GP2AP02VT00F Sensor)|TBD|
+|FSTOF2003C0I|Time-of-Flight Sensor Module (I2C, short range up to 10cm, Sharp GP2AP03VT00F Sensor)|TBD|
 |GP2Y1040AU0F|VCSEL Laser Dust Sensor (particle counter, built-in fan, PM1.0/2.5/10, high accuracy)|TBD|
 
 ## See also
