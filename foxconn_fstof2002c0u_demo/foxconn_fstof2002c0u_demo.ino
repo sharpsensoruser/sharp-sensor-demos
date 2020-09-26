@@ -3,7 +3,7 @@
 //
 // Board Connection:
 //   Arduino   FSTOF2002C0U
-//   3.3V      VCC
+//   3.3V      VDD
 //   GND       GND
 //   10pin     TX
 //   11pin     RX
