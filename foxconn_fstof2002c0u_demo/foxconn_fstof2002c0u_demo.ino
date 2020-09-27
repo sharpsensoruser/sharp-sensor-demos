@@ -3,10 +3,10 @@
 //
 // Board Connection:
 //   Arduino   FSTOF2002C0U
-//   3.3V      VDD
-//   GND       GND
-//   10pin     TX
-//   11pin     RX
+//   3.3V      Pin 1 - VDD
+//   GND       Pin 2 - GND
+//   10pin     Pin 3 - TXD
+//   11pin     Pin 4 - RXD
 //
 // Serial monitor setting:
 //   9600 baud 8-N-1
