@@ -25,13 +25,13 @@ Everything in this repository is based on information which is already publicly 
 |A1DU5P2CP005B|VOCs Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-A1DU5P2CP005B-VOCs-Sensor-Module)|[I2C](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp005b_demo/sharp_a1du5p2cp005b_demo_i2c.ino) / [UART](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp005b_demo/sharp_a1du5p2cp005b_demo_uart.ino)|
 |A1DU5P2CP006B|Humidity Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-A1DU5P2CP006B-Humidity-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp006b_demo/sharp_a1du5p2cp006b_demo.ino)|
 |DC6S4ZN3101|Microwave Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-DC6S4ZN3101-Microwave-Motion-Sensor-Module)|[Arduino](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_dc6s4zn3101_demo/sharp_dc6s4zn3101_demo.ino) / [CSharp](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/sharp_dc6s4zn3101_demo_csharp)|
+|FSTOF2002C0U|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-FSTOF2002C0U-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/foxconn_fstof2002c0u_demo/foxconn_fstof2002c0u_demo.ino)|
 |MTOF171000C0|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-MTOF171000C0-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_mtof171000c0_demo/sharp_mtof171000c0_demo.ino)|
 
 ## Coming Soon
 
 | Part Number | Description |Documentation|
 |-------------|-------------|-------------|
-|FSTOF2002C0U|Time-of-Flight Sensor Module (UART, long range up to 240cm, Sharp GP2AP02VT00F Sensor)|TBD|
 |FSTOF2003C0I|Time-of-Flight Sensor Module (I2C, short range up to 10cm, Sharp GP2AP03VT00F Sensor)|TBD|
 |GP2Y1040AU0F|VCSEL Laser Dust Sensor (particle counter, built-in fan, PM1.0/2.5/10, high accuracy)|TBD|
 
