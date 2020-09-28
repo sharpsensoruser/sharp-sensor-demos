@@ -54,7 +54,7 @@ void writeRegister(uint8_t regAddress, uint8_t value)
 
 // Helper function to request distance measurement.
 void send_CMD_ST_MM() {
-  uint8_t data = 0x01;
+  uint8_t data = 0;
   writeRegister(TOFM_CMD_ST_MM, data);
 }
 
@@ -97,7 +97,7 @@ void readDistance() {
 
 // Helper function to request version info.
 void send_CMD_RD_VERSION_INFO() {
-  uint8_t data = 0x01;
+  uint8_t data = 0;
   writeRegister(TOFM_CMD_RD_VERSION_INFO, data);
 }
 
