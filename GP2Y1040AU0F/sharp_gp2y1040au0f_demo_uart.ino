@@ -82,7 +82,7 @@ void readAirQualityData() {
   
   // Read the next 26 frames/bytes.
   for(int i = 2; i < 28; i++) {
-    int data = readSerial();
+    data = readSerial();
     if (data < 0 || data > 255)
       return;
     frames[i] = (uint8_t)data;    
@@ -159,7 +159,7 @@ void readCommandData()
   // Read in 5 remaining bytes from serial.
   for(int i = 2; i < 7; i++)
   {
-    int data = readSerial();
+    data = readSerial();
     if (data < 0 || data > 255)
       return;
     frames[i] = (uint8_t)data;
