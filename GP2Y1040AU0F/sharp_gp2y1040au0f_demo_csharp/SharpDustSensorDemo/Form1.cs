@@ -167,18 +167,25 @@ namespace SharpDustSensorDemo
         /// <returns>true if successful; false if unexpected data encountered.</returns>
         private bool ReadAirQualityData()
         {
-            // Read in 27 remaining bytes from serial.
             byte[] frames = new byte[28];
+
+            // Set the 1st start frame since we already read it.
             frames[0] = START_FRAME_1;
-            for (int i = 1; i < 28; i++)
+
+            // Look for the 2nd start frame.
+            int data = ReadSerialByte();
+            if (data != START_FRAME_2)
+                return false;
+            frames[1] = (byte)data;
+
+            // Read in 26 remaining bytes from serial.            
+            for (int i = 2; i < 28; i++)
             {
-                int data = ReadSerialByte();
+                data = ReadSerialByte();
                 if (data < 0 || data > 255)
                     return false;
                 frames[i] = (byte)data;
             }
-            if (frames[1] != START_FRAME_2)
-                return false;
 
             // Write to log the raw air data frames in two lines.
             WriteToLog("---");
@@ -246,18 +253,25 @@ namespace SharpDustSensorDemo
         /// <returns>true if successful; false if unexpected data encountered.</returns>
         private bool ReadCommandData()
         {
-            // Read in 6 remaining bytes from serial.
             byte[] frames = new byte[7];
+
+            // Set the 1st cmd frame since we already read it.
             frames[0] = CMD_FRAME_1;
-            for(int i = 1; i < 7; i++)
+
+            // Look for the 2nd cmd frame.
+            int data = ReadSerialByte();
+            if (data != CMD_FRAME_2)
+                return false;
+            frames[1] = (byte)data;
+
+            // Read in 5 remaining bytes from serial.
+            for(int i = 2; i < 7; i++)
             {
-                int data = ReadSerialByte();
+                data = ReadSerialByte();
                 if (data < 0 || data > 255)
                     return false;
                 frames[i] = (byte)data;
             }
-            if (frames[1] != CMD_FRAME_2)
-                return false;
 
             // Write to log all 7 bytes of cmd data.
             WriteToLog("---");
