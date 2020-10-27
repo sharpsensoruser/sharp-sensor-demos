@@ -538,7 +538,7 @@ namespace SharpDustSensorDemo
                     this.sendTextBox.Text = "42 4D 05 00 03 00 97";
                     break;
                 case 10:
-                    // TINTC: Set interval time for auto - cleaning to 60480[10s]
+                    // TINTC: Set interval time for auto-cleaning to 60480[10s]
                     this.sendTextBox.Text = "42 4D 06 EC 40 01 C1";
                     break;
                 case 11:
