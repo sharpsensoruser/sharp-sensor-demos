@@ -189,7 +189,7 @@ void readCommandData()
 //   MAVE: Set number of moving averages to 10: 42 4D 03 00 0A 00 9C
 //   TINT: Set interval time to 0 seconds: 42 4D 04 00 00 00 93
 //   TPREFAN: Set pre-rotation time of fan to 3 seconds: 42 4D 05 00 03 00 97
-//   TINTC: Set interval time for auto - cleaning to 60480[10s]: 42 4D 06 EC 40 01 C1
+//   TINTC: Set interval time for auto-cleaning to 60480[10s]: 42 4D 06 EC 40 01 C1
 //   TCLEAN: Set cleaning time to 10 seconds: 42 4D 07 00 0A 00 A0      
 void sendCommandData(uint8_t cmd, uint16_t dataValue)
 {
