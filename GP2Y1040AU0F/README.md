@@ -3,7 +3,7 @@ Sharp GP2Y1040AU0F VCSEL Laser Dust Sensor Application Guide
 
 ## Overview
 **GP2Y1040AU0F** is the brand new flagship model in Sharp's lineup of air quality sensors. 
-Designed for use in commercial air purifiers, GP2Y1040AU0F is a VCSEL laser-based particle counting sensor with built-in fan.
+Designed for use in home air purifiers, GP2Y1040AU0F is a VCSEL laser-based particle counting sensor with built-in fan.
 The sensor outputs particle counts in the form of number concentrations for different ranges of particle sizes as well as
 the corresponding dust density values such as PM1, PM2.5 and PM10.
 <img align="right" src="https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_img.png"></img>
