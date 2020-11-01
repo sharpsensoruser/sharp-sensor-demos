@@ -66,7 +66,29 @@ The following table shows the pin assignments for GP2Y1040AU0F.
 
 ## UART Demo: Arduino
 ### Active versus passive mode
-The GP2Y1040AU0F sensor has two modes of operation: **active** mode and **passive** mode. By default, the sensor is in active mode which means it will continuously output air quality data records/packets approximately once per second through its TXD transmitting pin. If your application only ever needs to read from the sensor in active mode, you can actually leave the sensor's RXD receiving pin unconnected.
+The GP2Y1040AU0F sensor has two modes of operation: **active** mode and **passive** mode. By default, the sensor is set to active mode which means it will continuously output air quality data records/packets approximately once per second through its TXD transmitting pin. If your application only ever needs to read from the sensor in active mode, you can actually leave the sensor's RXD receiving pin unconnected.
+
+### Reading UART data records from GP2Y1040AU0F
+In active mode, GP2Y1040AU0F transmits a UART data record about once every second. Each data record consists of 28 data frames, where each data frame is 1 byte. The first two frames of each data record are the bytes 0xFF and 0xFA. You can look for these bytes in your code to know when is the start of a new data record. Each data record contains the air quality measurement quantities such as number concentrations (particle counts) and calculated mass concentrations. The following table describes the 28-byte UART data record format.
+
+| Byte # | Field | Format | Description | Units |
+|--------|-------|--------|-------------|-------|
+| 0 | Start Frame 1 | 0xFF | Indicates start of data record | - |
+| 1 | Start Frame 2 | 0xFA | Indicates start of data record | - |
+| 2-3 | NC_03 | unsigned int (16-bit) big-endian | Number concentration of particles with size 0.3um to 10um | 0.1 particles / cm3 |
+| 4-5 | NC_05 | unsigned int (16-bit) big-endian | Number concentration of particles with size 0.5um to 10um | 0.1 particles / cm3 |
+| 6-7 | NC_1 | unsigned int (16-bit) big-endian | Number concentration of particles with size 1.0um to 10um | 0.1 particles / cm3 |
+| 8-9 | NC_25 | unsigned int (16-bit) big-endian | Number concentration of particles with size 2.5um to 10um | 0.1 particles / cm3 |
+| 10-11 | NC_4 | unsigned int (16-bit) big-endian | Number concentration of particles with size 4.0um to 10um | 0.1 particles / cm3 |
+| 12-13 | Reserved | - | Reserved for future expansion |
+| 14-15 | PM1_1 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 1.0um (standard particle) | ug/m3 |
+| 16-17 | PM25_1 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 2.5um (standard particle) | ug/m3 |
+| 18-19 | PM10_1 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 10um (standard particle) | ug/m3 |
+| 20-21 | PM1_2 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 1.0um (cigarette smoke) | ug/m3 |
+| 22-23 | PM25_2 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 2.5um (cigarette smoke) | ug/m3 |
+| 24-25 | PM10_2 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 10um (cigarette smoke) | ug/m3 |
+| 26 | Reserved | - | Reserved for future expansion | - |
+| 27 | CheckSum | unsigned int (8-bit) | Check sum (8 bit) of previous 27 bytes | - |
 
 ## UART Demo: Windows/CSharp
 
