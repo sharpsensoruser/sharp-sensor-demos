@@ -46,10 +46,10 @@ The Sharp GP2Y1040AU0F sensor has a rectangular hole on one side for air intake,
 
 ![recommended sensor orientation](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_placement.png)
 
-Even though GP2Y1040AU0F has an automatic cleaning function (by using high-speed fan rotation), the sensor compartment cannot be opened up for manual cleaning. Therefore, Sharp recommends that your application should try to prevent large dust or other coarse particles from entering the sensor in the first place. For example, install a coarse mesh filter in front of the sensor to capture such particles.
+Even though GP2Y1040AU0F has an automatic cleaning function (by using high-speed fan rotation), the sensor compartment cannot be opened up for manual cleaning. Therefore, Sharp recommends that your application should try to prevent large dust or other coarse particles from entering the sensor in the first place. For example, install a coarse mesh filter in front of the sensor to capture such incoming particles.
 
 ## GP2Y1040AU0F connector cable
-Sharp GP2Y1040AU0F uses the 6-pin connector **50801W00-6P-S-HF** made by JCTC (Shenglan Technology Co. Ltd). The connector is on the side of the sensor that is opposite to the air inlet and outlets.
+Sharp GP2Y1040AU0F uses the 6-pin connector **50801W00-6P-S-HF** made by JCTC (Shenglan Technology Co. Ltd). The connector is located on the side of the sensor that is opposite to the air inlet and outlets.
 
 ![GP2Y1040AU0F connector](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_connector.png)
 
@@ -64,7 +64,7 @@ The following table shows the pin assignments for GP2Y1040AU0F.
 | 5 | Vcc | Supply Voltage 5V +/-10% |
 | 6 | GND | Ground |
 
-## UART Example: Arduino sketch
+## UART Demo: Arduino sketch
 
-## UART Example: Windows/CSharp application
+## UART Demo: Windows/CSharp application
 
