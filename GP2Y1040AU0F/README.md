@@ -34,7 +34,7 @@ the corresponding dust density values such as PM2.5 and PM10.
 | Light emitting element | LED | VCSEL laser diode |
 | Method of operation | Particle counter | Particle counter |
 | Minimum detectable dust size | 1um | 0.3um |
-| Dust density sensing range | up to 500 ug/m3 | up to 1000 ug/m3 |
+| Dust density sensing range | up to 500ug/m3 | up to 1000ug/m3 |
 | Sensing of different dust sizes | Yes, counts particles < 2.5um, > 2.5um, and total | Yes, outputs PM1, PM2.5, PM10 as well as particle concentrations for several size ranges |
 | Startup time | < 5 sec | < 5 sec |
 | Accuracy | +/-15% | +/-10% |
@@ -47,3 +47,10 @@ The Sharp GP2Y1040AU0F sensor has a rectangular hole on one side for air intake,
 ![recommended sensor orientation](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_placement.png)
 
 Even though GP2Y1040AU0F has an automatic cleaning function (by using high-speed fan rotation), the sensor compartment cannot be opened up for manual cleaning. Therefore, Sharp recommends that your application should try to prevent large dust or other coarse particles from entering the sensor in the first place. For example, install a coarse mesh filter in front of the sensor to capture such particles.
+
+## GP2Y1040AU0F connector cable
+Sharp GP2Y1040AU0F uses the same type of **6-pin connector** as the popular GP2Y1010AU0F model. Earlier iterations of the GP2Y1010AU0F sensor used the JST (Japan Solderless Terminal) connector **S6B-ZR-SM4A**. But all newer production versions of both sensors now use JCTC connector **11501W90-6P-S-HF** which should be compatible with the old JST connector. What this all means is if you have an old cable harness for GP2Y1010AU0F, the cable should work just fine with GP2Y1030AU0F as well. The following table and figure shows the pin assignments for GP2Y1030AU0F.
+
+![connector pin assignments](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1030au0f_connectorpins.png)
+
+
