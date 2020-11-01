@@ -49,8 +49,17 @@ The Sharp GP2Y1040AU0F sensor has a rectangular hole on one side for air intake,
 Even though GP2Y1040AU0F has an automatic cleaning function (by using high-speed fan rotation), the sensor compartment cannot be opened up for manual cleaning. Therefore, Sharp recommends that your application should try to prevent large dust or other coarse particles from entering the sensor in the first place. For example, install a coarse mesh filter in front of the sensor to capture such particles.
 
 ## GP2Y1040AU0F connector cable
-Sharp GP2Y1040AU0F uses the same type of **6-pin connector** as the popular GP2Y1010AU0F model. Earlier iterations of the GP2Y1010AU0F sensor used the JST (Japan Solderless Terminal) connector **S6B-ZR-SM4A**. But all newer production versions of both sensors now use JCTC connector **11501W90-6P-S-HF** which should be compatible with the old JST connector. What this all means is if you have an old cable harness for GP2Y1010AU0F, the cable should work just fine with GP2Y1030AU0F as well. The following table and figure shows the pin assignments for GP2Y1030AU0F.
+Sharp GP2Y1040AU0F uses the 6-pin connector **50801W00-6P-S-HF** made by JCTC (Shenglan Technology Co. Ltd). The following table and figure shows the pin assignments for GP2Y1040AU0F.
 
-![connector pin assignments](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1030au0f_connectorpins.png)
+| Pin number | Pin name | Description |
+|------------|----------|-------------|
+| 1 | TXD / SDA | 3.3V logic UART / I2C |
+| 2 | RXD / SCL | 3.3V logic UART / I2C |
+| 3 | SEL | Interface select (UART: set to floating or 3.3V. I2C: set to GND) |
+| 4 | GND | Ground |
+| 5 | Vcc | Supply Voltage 5V +/-10% |
+| 6 | GND | Ground |
+
+![GP2Y1040AU0F connector](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_connector.png)
 
 
