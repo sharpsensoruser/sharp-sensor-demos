@@ -80,7 +80,7 @@ In active mode, GP2Y1040AU0F transmits a UART data record about once every secon
 | 6-7 | NC_1 | unsigned int (16-bit) big-endian | Number concentration of particles with size 1.0um to 10um | 0.1 particles / cm3 |
 | 8-9 | NC_25 | unsigned int (16-bit) big-endian | Number concentration of particles with size 2.5um to 10um | 0.1 particles / cm3 |
 | 10-11 | NC_4 | unsigned int (16-bit) big-endian | Number concentration of particles with size 4.0um to 10um | 0.1 particles / cm3 |
-| 12-13 | Reserved | - | Reserved for future expansion |
+| 12-13 | Reserved | - | Reserved for future expansion | - |
 | 14-15 | PM1_1 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 1.0um (standard particle) | ug/m3 |
 | 16-17 | PM25_1 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 2.5um (standard particle) | ug/m3 |
 | 18-19 | PM10_1 | unsigned int (16-bit) big-endian | Mass concentration of particles with size 0.3um to 10um (standard particle) | ug/m3 |
@@ -97,7 +97,7 @@ The PM1_2, PM25_2, and PM10_2 mass concentration values are pre-calibrated by us
 
 ### Sending UART commands to GP2Y1040AU0F
 
-You can send UART commands to the GP2Y1040AU0F sensor in order to switch between active and passive mode, and then issue commands in passive mode or change parameter settings. While in passive mode, the sensor doesn't continually send UART data records. Instead, you can issue a command to read the air quality data one time.
+You can send a UART command to the GP2Y1040AU0F sensor in order to switch from active to passive mode. While in passive mode, the sensor doesn't continually send UART data records. Instead, you can issue a subsequent command to read the air quality data one time. You can also issue other commands such as performing a software reset, or change settings on the sensor such as the number of moving averages to use.
 
 Each UART command consists of 7 data frames (or bytes). The first two bytes are always 0x42 and 0x4D. The following table describes the UART command format.
 
@@ -106,12 +106,12 @@ Each UART command consists of 7 data frames (or bytes). The first two bytes are 
 | 0 | 0x42 | Indicate start of command record |
 | 1 | 0x4D | Indicate start of command record |
 | 2 | CMD | Command code |
-| 3 | DATAH | Data value (hi byte) |
-| 4 | DATAL | Data value (lo byte) |
+| 3 | DATAH | Data value to set (hi byte) |
+| 4 | DATAL | Data value to set (lo byte) |
 | 5 | CSH | CheckSum (hi byte) |
 | 6 | CSL | CheckSum (lo byte) |
 
-The CheckSum is 16-bits and calculated as: **CheckSum = 0x42 + 0x4D + CMD + DATAH + DATAL**.
+The CheckSum is 16-bits long and is calculated as: **CheckSum = 0x42 + 0x4D + CMD + DATAH + DATAL**.
 
 The following table describes some example UART commands you can send.
 
@@ -130,9 +130,11 @@ The following table describes some example UART commands you can send.
 | 0x06 | 0xEC | 0x40 | TINTC | Set interval time for auto-cleaning to 60480[10s] | 42 4D 06 EC 40 01 C1 |
 | 0x07 | 0x00 | 0x0A | TCLEAN | Set cleaning time to 10 seconds | 42 4D 07 00 0A 00 A0 |
 
+Commands to change settings on the sensor such as MAVE or TCLEAN require you to put the sensor into passive mode first. Once you send a command such as MAVE to the sensor, you will receive back the exact same command (i.e. you will read back a 7-byte record from the sensor).
+
 ### UART Demo: Arduino
 
-In the [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_uart.ino), the Arduino hardware serial port is used only for printing output to the Arduino Serial Monitor at 9600 baud. The actual UART communication with the GP2Y1040AU0F sensor is done through a software serial port connected to Arduino digital pins 10 and 11. However, because the Arduino digital pins use 5V while the GP2Y1040AU0F TXD and RXD pins use 3.3V logic, it is necessary to use a 3.3V-to-5V logic level converter in the circuit. The following figure shows the connections using Arduino Uno.
+In this [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_uart.ino), the Arduino hardware serial port is used only for printing output to the Arduino Serial Monitor at 9600 baud. The actual UART communication with the GP2Y1040AU0F sensor is done through a software serial port connected to Arduino digital pins 10 and 11. However, because the Arduino digital pins use 5V while the GP2Y1040AU0F TXD and RXD pins use 3.3V logic, it is necessary to use a 3.3V-to-5V logic level converter in the circuit. The following figure shows the connections using Arduino Uno.
 
 ![GP2Y1040AU0F Arduino circuit for UART](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_circuit.png)
 
@@ -142,7 +144,7 @@ The following screen capture shows example output from the GP2Y1040AU0F dust sen
 
 ### UART Demo: Windows/CSharp
 
-This is a [C#/.NET Windows Forms application](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_csharp) for controlling Sharp GP2Y1040AU0F Dust Sensor. The Sharp sensor must be connected to a FT232RL serial-to-USB adapter which connects to your Windows PC. The USB adapter must support 3.3V RX/TX and 5V VCC.
+This is a [C#/.NET Windows Forms application](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_csharp) for controlling the Sharp GP2Y1040AU0F Dust Sensor. The Sharp sensor must be connected to a FT232RL serial-to-USB adapter which connects to your Windows PC. The USB adapter must support 3.3V RX/TX and 5V VCC.
 
 The application has various options for logging the UART data to a log file and to the screen.
 
