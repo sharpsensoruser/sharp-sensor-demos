@@ -2,7 +2,7 @@
 Sharp GP2Y1014AU0F Application Guide
 
 ## Overview
-**GP2Y1014AU0F** is one of the newer models in Sharp's lineup of PM (particulate matter) **dust sensors**. Designed for use in commercial air purifiers, GP2Y1014AU0F is an **analog output** dust sensor which is similar to the popular **GP2Y1010AU0F** model but with improved accuracy. In terms of Arduino circuit and application source code, these two analog dust sensors are more or less interchangeable. You can usually find GP2Y1014AU0F in stock at various components distributors.
+**GP2Y1014AU0F** is one of the newer models in Sharp's lineup of PM (particulate matter) **dust sensors**. Designed for use in home air purifiers, GP2Y1014AU0F is an **analog output** dust sensor which is similar to the popular **GP2Y1010AU0F** model but with improved accuracy. In terms of Arduino circuit and application source code, these two analog dust sensors are more or less interchangeable. You can usually find GP2Y1014AU0F in stock at various components distributors.
 <img align="right" src="https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1014au0f_img.png"></img>
 
 Besides air purifiers, GP2Y1014AU0F can also be found in smart home applications such as room monitors and portable air quality monitors. Renasys has a publicly available [reference design for a battery-powered, PM2.5 air quality monitor based on GP2Y1014AU0F](https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78/quick-solution.html) (search for PM2.5). You can download a complete project which includes circuit diagrams, BOM, and sample source code. EME Systems in California also uses GP2Y1014AU0F in a couple of their [air quality projects](https://www.emesystems.com/projects.html).
