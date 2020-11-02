@@ -17,6 +17,7 @@ Everything in this repository is based on information which is already publicly 
 |GP2Y1014AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1014AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1014au0f_demo/sharp_gp2y1014au0f_demo.ino)|
 |GP2Y1026AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1026AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo/sharp_gp2y1026au0f_demo.ino)|
 |GP2Y1030AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1030AU0F-Dust-Sensor)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1030au0f_demo/sharp_gp2y1030au0f_demo.ino)|
+|GP2Y1040AU0F|Air Quality Sensor (PM, Dust)|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-GP2Y1040AU0F-Dust-Sensor)|[Arduino](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_uart.ino) / [CSharp](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_csharp)|
 
 ## Modules
 
@@ -28,12 +29,6 @@ Everything in this repository is based on information which is already publicly 
 |FSTOF2002C0U|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Foxconn-FSTOF2002C0U-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/FSTOF2002C0U/foxconn_fstof2002c0u_demo.ino)|
 |FSTOF2003C0I|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Foxconn-FSTOF2003C0I-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/FSTOF2003C0I/foxconn_fstof2003c0i_demo.ino)|
 |MTOF171000C0|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-MTOF171000C0-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_mtof171000c0_demo/sharp_mtof171000c0_demo.ino)|
-
-## Coming Soon
-
-| Part Number | Description |Documentation|
-|-------------|-------------|-------------|
-|GP2Y1040AU0F|VCSEL Laser Dust Sensor (particle counter, built-in fan, PM1.0/2.5/10, high accuracy)|TBD|
 
 ## See also
 * [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Sharp-Dust-Sensor-Connectors)
