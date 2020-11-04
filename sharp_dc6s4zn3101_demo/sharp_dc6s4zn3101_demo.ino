@@ -5,8 +5,8 @@
 //   Arduino Mega   DC6S4ZN3101   Arduino Uno
 //   3.3V           VCC           3.3V          
 //   GND            GND           GND
-//   RX1-pin19      TXD           pin10
-//   TX1-pin18      RXD           pin11
+//   RX1-pin19      TXD           pin10   Use 3.3V logic level converter
+//   TX1-pin18      RXD           pin11   Use 3.3V logic level converter
 //
 // Serial monitor setting:
 //   115200 baud
