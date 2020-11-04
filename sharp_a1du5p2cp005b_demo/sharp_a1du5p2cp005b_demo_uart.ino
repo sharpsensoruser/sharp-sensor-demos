@@ -8,8 +8,8 @@
 //   3.3V            Pin 1 - VDD
 //   Not Connected   Pin 2 - SCL
 //   Not Connected   Pin 3 - SDA
-//   Pin 11          Pin 4 - RX
-//   Pin 10          Pin 5 - TX
+//   Pin 11          Pin 4 - RX    Use 3.3V logic level converter
+//   Pin 10          Pin 5 - TX    Use 3.3V logic level converter
 //   GND             Pin 6 - GND
 //   
 // Reference: http://www.mnsenstech.com
