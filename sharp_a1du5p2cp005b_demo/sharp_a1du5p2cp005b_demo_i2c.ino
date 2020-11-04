@@ -6,8 +6,8 @@
 // Board Connection:
 //   Arduino         A1DU5P2CP005B
 //   3.3V            Pin 1 - VDD
-//   SCL             Pin 2 - SCL
-//   SDA             Pin 3 - SDA
+//   SCL             Pin 2 - SCL   Use 3.3V logic level converter
+//   SDA             Pin 3 - SDA   Use 3.3V logic level converter
 //   Not Connected   Pin 4 - RX
 //   Not Connected   Pin 5 - TX
 //   GND             Pin 6 - GND
