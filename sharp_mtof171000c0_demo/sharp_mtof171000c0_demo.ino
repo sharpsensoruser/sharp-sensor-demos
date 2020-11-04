@@ -5,8 +5,8 @@
 //   Arduino   MTOF171000C0
 //   3.3V      VDD
 //   GND       GND
-//   10pin     TXD
-//   11pin     RXD
+//   10pin     TXD   Use 3.3V logic level converter
+//   11pin     RXD   Use 3.3V logic level converter
 //
 // Serial monitor setting:
 //   9600 baud
