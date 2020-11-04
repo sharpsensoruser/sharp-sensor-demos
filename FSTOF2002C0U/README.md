@@ -1,5 +1,5 @@
 # README
-Foxconn FSTOF2002C0U Application Guide
+Foxconn FSTOF2002C0U Time of Flight Sensor Module Application Guide
 
 ## Overview
 **FSTOF2002C0U** is the new **module** version of Sharp's **GP2AP02VT00F** Time-of-Flight (**TOF**) sensor which is designed to measure absolute distances from 10cm to 240cm (white card). Sharp GP2AP02VT00F is a very compact I2C sensor commonly used in smartphone applications such as camera auto-focus.
