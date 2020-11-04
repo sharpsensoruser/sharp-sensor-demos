@@ -10,7 +10,7 @@
 //   SDA       Pin 3 - SDA   Use 3.3V logic level converter
 //   GND       Pin 4 - GND
 //   
-// Reference: https://ams.com/ens210
+// Reference: https://www.sciosense.com/products/
 /////////////////////////////////////////////////////////////////////////////
 
 #include <Wire.h>
