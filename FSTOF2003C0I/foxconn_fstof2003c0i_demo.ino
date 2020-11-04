@@ -165,6 +165,9 @@ void setup() {
   Serial.println("FSTOF2003C0I Demo");
   Serial.println("=================");
   
+   // Start the Wire library.
+  Wire.begin();
+  
   // Wait one second for startup.
   delay(1000);
 
