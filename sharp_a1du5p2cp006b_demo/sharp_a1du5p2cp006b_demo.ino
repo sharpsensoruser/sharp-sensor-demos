@@ -6,8 +6,8 @@
 // Board Connection:
 //   Arduino   A1DU5P2CP006B
 //   3.3V      Pin 1 - VDD
-//   SCL       Pin 2 - SCL
-//   SDA       Pin 3 - SDA
+//   SCL       Pin 2 - SCL   Use 3.3V logic level converter
+//   SDA       Pin 3 - SDA   Use 3.3V logic level converter
 //   GND       Pin 4 - GND
 //   
 // Reference: https://ams.com/ens210
