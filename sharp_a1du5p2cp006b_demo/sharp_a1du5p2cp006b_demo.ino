@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////
 // Sharp A1DU5P2CP006B Humidity Sensor Module
 //
-// Sensor IC: AMS ENS210
+// Sensor IC: ENS210
 //
 // Board Connection:
 //   Arduino   A1DU5P2CP006B
