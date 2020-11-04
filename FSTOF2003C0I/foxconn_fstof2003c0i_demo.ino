@@ -5,8 +5,8 @@
 //   Arduino   FSTOF2003C0I
 //   3.3V      Pin 1 - VDD
 //   GND       Pin 2 - GND
-//   SDA       Pin 3 - SDA
-//   SCL       Pin 4 - SCL
+//   SDA       Pin 3 - SDA   Use 3.3V logic level converter
+//   SCL       Pin 4 - SCL   Use 3.3V logic level converter
 /////////////////////////////////////////////////////////////////////////////
 
 #include <Wire.h>
