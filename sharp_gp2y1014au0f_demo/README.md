@@ -1,5 +1,5 @@
 # README
-Sharp GP2Y1014AU0F Application Guide
+Sharp GP2Y1014AU0F Dust Sensor Application Guide
 
 ## Overview
 **GP2Y1014AU0F** is one of the newer models in Sharp's lineup of PM (particulate matter) **dust sensors**. Designed for use in home air purifiers, GP2Y1014AU0F is an **analog output** dust sensor which is similar to the popular **GP2Y1010AU0F** model but with improved accuracy. In terms of Arduino circuit and application source code, these two analog dust sensors are more or less interchangeable. You can usually find GP2Y1014AU0F in stock at various components distributors.
