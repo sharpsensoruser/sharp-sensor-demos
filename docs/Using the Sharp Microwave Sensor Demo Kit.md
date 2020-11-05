@@ -90,7 +90,7 @@ The MWS Module actually has two modes of operation.  The standard mode is UART.
 
 ## See also
 
-* [Application Guide for Sharp DC6S4ZN3101 Microwave Motion Sensor Module](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-DC6S4ZN3101-Microwave-Motion-Sensor-Module)
+* [Application Guide for Sharp DC6S4ZN3101 Microwave Motion Sensor Module](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_dc6s4zn3101_demo/README.md)
 * [Sharp Microwave Sensor Demo Application (C#/.NET Windows Forms)](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/sharp_dc6s4zn3101_demo_csharp)
 * [Sharp Microwave Sensor Module Lineup](http://www.socle-tech.com/SHARP_sensorModule_NoncontactBodyMotionSensorModule.php)
 * [Sharp DC6S4ZN3101 Preliminary Datasheet](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_DC6S4XN31XX.pdf)
