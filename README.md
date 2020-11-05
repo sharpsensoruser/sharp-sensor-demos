@@ -1,5 +1,5 @@
 # README
-## Demo programs showing how to use Sharp sensors with Arduino
+## Sharp Sensor Demos for Arduino
 
 The purpose of this repository is to help Arduino users get started with using sensor components from Sharp Corporation. You may know Sharp as the maker of consumer electronics products such as flatscreen TVs, calculators, and smartphones. But Sharp also manufactures optoelectronic components and sensors which are widely used by other companies to build their own products such as air purifiers, robotic vacuums, automatic faucets, and much more.
 
@@ -25,12 +25,10 @@ Everything in this repository is based on information which is already publicly 
 |-------------|-------------|-------|------|
 |A1DU5P2CP005B|VOCs Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-A1DU5P2CP005B-VOCs-Sensor-Module)|[I2C](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp005b_demo/sharp_a1du5p2cp005b_demo_i2c.ino) / [UART](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp005b_demo/sharp_a1du5p2cp005b_demo_uart.ino)|
 |A1DU5P2CP006B|Humidity Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-A1DU5P2CP006B-Humidity-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_a1du5p2cp006b_demo/sharp_a1du5p2cp006b_demo.ino)|
-|DC6S4ZN3101|Microwave Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-DC6S4ZN3101-Microwave-Motion-Sensor-Module)|[Arduino](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_dc6s4zn3101_demo/sharp_dc6s4zn3101_demo.ino) / [CSharp](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/sharp_dc6s4zn3101_demo_csharp)|
 |FSTOF2002C0U|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Foxconn-FSTOF2002C0U-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/FSTOF2002C0U/foxconn_fstof2002c0u_demo.ino)|
 |FSTOF2003C0I|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Foxconn-FSTOF2003C0I-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/FSTOF2003C0I/foxconn_fstof2003c0i_demo.ino)|
 |MTOF171000C0|Time-of-Flight Sensor Module|[Application Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Application-Guide-for-Sharp-MTOF171000C0-Time-of-Flight-Sensor-Module)|[Demo Source Code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_mtof171000c0_demo/sharp_mtof171000c0_demo.ino)|
 
 ## See also
-* [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Sharp-Dust-Sensor-Connectors)
-* [Using the Sharp Microwave Sensor Demo Kit](https://github.com/sharpsensoruser/sharp-sensor-demos/wiki/Using-the-Sharp-Microwave-Sensor-Demo-Kit)
+* [Sharp Dust Sensor Connectors - JST S6B-ZR-SM4A and JCTC 11501W90-6P-S-HF](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Sharp%20Dust%20Sensor%20Connectors.md)
 * [Distance Sensor Selection Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Distance%20Sensor%20Selection.pdf)
