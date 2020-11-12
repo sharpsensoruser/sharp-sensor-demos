@@ -120,6 +120,6 @@ If you are switching between different Arduino boards, make sure you go to the A
 ## See also
 * [TOF Module Product Page](http://www.socle-tech.com/Socle_ToF_Module%20.php)
 * [FSTOF2002C0U Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/FSTOF2002C0x%20ToF%20module%20Preliminary%20V4_EN.pdf)
-* [FSTOF2002C0U Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/FSTOF200xC0x%20ToF%20module%20Preliminary%20application%20guide%20.pdf)
+* [FSTOF2002C0U Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/FSTOF200xC0x%20ToF%20module%20Preliminary%20application%20guide_EN.pdf)
 * [GP2AP02VT00F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2AP02VT00F_Specification.pdf)
 
