@@ -1,12 +1,14 @@
 /////////////////////////////////////////////////////////////////////////////
-// Sharp MTOF171000C0 TOF Sensor Module Demo
+// Sharp MTOF171000C0 TOF Sensor Module Demo (UART)
 //
 // Board Connection:
 //   Arduino   MTOF171000C0
-//   3.3V      VDD
-//   GND       GND
-//   10pin     TXD   Use 3.3V logic level converter
-//   11pin     RXD   Use 3.3V logic level converter
+//   3.3V      Pin 1 - VDD
+//   GND       Pin 2 - GND
+//   10pin     Pin 3 - TXD   Use 3.3V logic level converter
+//   11pin     Pin 4 - RXD   Use 3.3V logic level converter
+//   NC        Pin 5
+//   NC        Pin 6
 //
 // Serial monitor setting:
 //   9600 baud
@@ -21,6 +23,23 @@
 #define txPin 11
 static SoftwareSerial mySerial(rxPin, txPin);
 
+// Starting bytes to identify UART data packet.
+#define START_BYTE_1  0x55
+#define START_BYTE_2  0xAA
+
+// UART command codes.
+#define CMD_RD_SEN_REG 0xD1   // Read the ToF sensor register
+#define CMD_WR_SEN_REG 0x51   // Write the ToF sensor register
+#define CMD_RD_MM      0xD3   // Measure distance
+#define CMD_CALI_XTALK 0xFA   // Crosstalk calibration
+#define CMD_CALI_OFS   0xFB   // Offset calibration
+#define CMD_WR_OFS     0x7C   // Write the offset value
+#define CMD_WR_XTALK   0x7D   // Write the crosstalk value
+#define CMD_RD_VAR     0xF0   // Get the module status information, for the engineering debug
+#define CMD_RESET      0xF5   // Sensor reset
+
+/////////////////////////////////////////////////////////////////////////////
+
 // Helper function to send data through the software serial port.
 void sendSerial(unsigned char data) {
   mySerial.write(data);
@@ -32,67 +51,93 @@ int readSerial() {
   return mySerial.read();
 }
 
-// Helper function to send the command CMD_RD_MM.
-void send_CMD_RD_MM() {
+/////////////////////////////////////////////////////////////////////////////
+
+// Helper function to send a basic command that doesn't require command data.
+void sendCommand(byte cmdCode, byte dataLength) {
   // Send 1st Identification Byte.
-  sendSerial(0x55);
+  sendSerial(START_BYTE_1);
 
   // Send 2nd Identification Byte.
-  sendSerial(0xAA);
+  sendSerial(START_BYTE_2);
 
-  // Send the Command Instruction for CMD_RD_MM.
-  sendSerial(0xD3);
+  // Send the Command Instruction.
+  sendSerial(cmdCode);
 
-  // Send Data Register 0.
+  // Send the Command Data.
   sendSerial(0);
 
   // Send the Data Length for this command in bytes.
-  sendSerial(0x02);
+  sendSerial(dataLength);
 
   // Send the CheckSum (which does not include the identification bytes).
-  sendSerial(0xD5);
+  byte checksum = cmdCode + dataLength;
+  sendSerial(checksum);
 }
 
 /////////////////////////////////////////////////////////////////////////////
 
-// Arduino setup function.
-void setup() {
-  // Start the hardware serial port for the serial monitor.
-  Serial.begin(9600);
+// Helper function to read and print out the bytes of the specified command.
+// Note the start bytes and cmd code have already been read.
+void readCommand(byte cmdCode, byte dataLength) {
+  // For computing the checksum.
+  byte testsum = cmdCode;
 
-  // Start the software serial port for communicating with MTOF171000C0.
-  mySerial.begin(9600);
-
-  // Wait two seconds for startup.
-  delay(2000);
+  // Print out the command bytes read so far.
+  Serial.print("Read Command: ");
+  Serial.print(START_BYTE_1, HEX);
+  Serial.print(" ");
+  Serial.print(START_BYTE_2, HEX);
+  Serial.print(" ");
+  Serial.print(cmdCode, HEX);
+  
+  // Read the cmd data.
+  int cmdData = readSerial();
+  Serial.print(" ");
+  Serial.print(cmdData, HEX);
+  testsum += (byte)cmdData;
+  
+  // Read the Data Length.
+  int len = readSerial();
+  Serial.print(" ");
+  Serial.print(len, HEX);
+  if ( len != dataLength ) {
+    Serial.println("");
+    Serial.println("Error: Unexpected data length");
+    return;
+  }
+  testsum += dataLength;
+  
+  // Read the Data.
+  for(int i = 0; i < dataLength; i++) {
+    int data = readSerial();
+    Serial.print(" ");
+    Serial.print(data, HEX);
+    testsum += (byte)data;
+  }
+  
+  // Read and verify the CheckSum.
+  int checksum = readSerial();
+  Serial.print(" ");
+  Serial.println(checksum, HEX);
+  if ( checksum != testsum ) {
+    Serial.println("Error: Checksum does not match");
+  }
 }
 
-// Arduino main loop.
-void loop() {
-  // Send the request for a distance measurement.
-  send_CMD_RD_MM();
-  
-  // Look for 1st Identification Byte.
-  if ( readSerial() != 0x55 )
-    return;
+/////////////////////////////////////////////////////////////////////////////
 
-  // Look for 2nd Identification Byte.
-  if ( readSerial() != 0xAA )
-    return;
-
-  // Look for Command Instruction.
-  int cmd = 0xD3;
-  if ( readSerial() != cmd )
-    return;
-
-  // Read the data register (unused).
-  int dataReg = readSerial();
-  if ( dataReg != 0 )
+// Read the measured distance from the data packet.
+// Note the start bytes and cmd code have already been read.
+void readDistance() {
+  // Read the cmd data (unused).
+  int cmdData = readSerial();
+  if ( cmdData != 0 )
     return;
     
   // Read the Data Length.
   int dataLength = readSerial();
-  if ( dataLength != 0x02 )
+  if ( dataLength != 2 )
     return;
 
   // Read the Hi byte of the distance.
@@ -103,15 +148,71 @@ void loop() {
 
   // Read and verify the CheckSum.
   int checksum = readSerial();
-  unsigned int testsum = cmd + dataReg + dataLength + distHi + distLo;
-  if ( checksum != (testsum & 0xff) )
+  unsigned int testsum = CMD_RD_MM + cmdData + dataLength + distHi + distLo;
+  if ( checksum != (testsum & 0xFF) )
     return;
     
   // Print the distance to the Serial Monitor.
   int distMM = distHi * 256 + distLo;
-  Serial.print("Distance = ");
+  Serial.print("Read Distance: ");
   Serial.print(distMM);
   Serial.println("mm");
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+// Read the UART data packet. 
+void readDataPacket() {
+  // Look for 1st Identification Byte.
+  if ( readSerial() != START_BYTE_1 )
+    return;
+
+  // Look for 2nd Identification Byte.
+  if ( readSerial() != START_BYTE_2 )
+    return;
+
+  // Look for the Command Code and process accordingly.
+  int cmd = readSerial();
+  if ( cmd == CMD_RD_MM ) {
+    readDistance();
+  } else if ( cmd == CMD_CALI_XTALK || cmd == CMD_CALI_OFS ) {
+    readCommand(cmd, 4);
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+// Arduino setup function.
+void setup() {
+  // Start the hardware serial port for the serial monitor.
+  Serial.begin(9600);
+  Serial.println("");
+  Serial.println("MTOF171000C0 Demo");
+  Serial.println("=================");
+
+  // Start the software serial port for communicating with MTOF171000C0.
+  mySerial.begin(9600);
+
+  // Wait two seconds for startup.
+  delay(2000);
+
+  // Test sending some commands.
+  Serial.println("Send CMD_CALI_XTALK");
+  sendCommand(CMD_CALI_XTALK, 4);
+  Serial.println("Send CMD_CALI_OFS");
+  sendCommand(CMD_CALI_OFS, 4);
+  //Serial.println("Send CMD_RESET");
+  //sendCommand(CMD_RESET, 0);
+}
+
+// Arduino main loop.
+void loop() {
+  Serial.println("---");
+  
+  // Send the request for a distance measurement.
+  sendCommand(CMD_RD_MM, 2);
+
+  // Read the data packet.
+  readDataPacket();
   
 } // END PROGRAM
-
