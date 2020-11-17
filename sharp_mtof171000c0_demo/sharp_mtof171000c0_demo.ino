@@ -229,12 +229,13 @@ void setup() {
   delay(2000);
 
   // Test sending some commands.
-  Serial.println("Send CMD_CALI_XTALK");
-  sendCommand(CMD_CALI_XTALK, 4);
-  Serial.println("Send CMD_CALI_OFS");
-  sendCommand(CMD_CALI_OFS, 4);
+  //Serial.println("Send CMD_CALI_XTALK");
+  //sendCommand(CMD_CALI_XTALK, 4);
+  //Serial.println("Send CMD_CALI_OFS");
+  //sendCommand(CMD_CALI_OFS, 4);
   //Serial.println("Send CMD_RESET");
   //sendCommand(CMD_RESET, 0);
+  //delay(500);
 }
 
 // Arduino main loop.
