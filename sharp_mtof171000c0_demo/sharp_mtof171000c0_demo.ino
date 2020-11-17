@@ -77,6 +77,38 @@ void sendCommand(byte cmdCode, byte dataLength) {
 
 /////////////////////////////////////////////////////////////////////////////
 
+// Helper function to send a write calibration command.
+void sendCommandWriteCali(byte cmdCode, byte hiByte, byte loByte) {
+  // Send 1st Identification Byte.
+  sendSerial(START_BYTE_1);
+
+  // Send 2nd Identification Byte.
+  sendSerial(START_BYTE_2);
+
+  // Send the Command Instruction.
+  sendSerial(cmdCode);
+
+  // Send the Command Data.
+  sendSerial(0);
+
+  // Send the Data Length for this command in bytes.
+  sendSerial(2);
+
+  // Send the hi byte of the calibration value to set.
+  sendSerial(hiByte);
+
+  // Send the lo byte of the calibration value to set.
+  sendSerial(loByte);
+  
+  // Send the CheckSum (which does not include the identification bytes).
+  byte checksum = cmdCode + 2 + hiByte + loByte;
+  sendSerial(checksum);
+
+  delay(500);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
 // Helper function to read and print out the bytes of the specified command.
 // Note the start bytes and cmd code have already been read.
 void readCommand(byte cmdCode, byte dataLength) {
