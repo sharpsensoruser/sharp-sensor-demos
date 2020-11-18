@@ -31,10 +31,10 @@ static SoftwareSerial mySerial(rxPin, txPin);
 #define CMD_RD_SEN_REG 0xD1   // Read the ToF sensor register
 #define CMD_WR_SEN_REG 0x51   // Write the ToF sensor register
 #define CMD_RD_MM      0xD3   // Measure distance
-#define CMD_CALI_XTALK 0xFA   // Crosstalk calibration
-#define CMD_CALI_OFS   0xFB   // Offset calibration
-#define CMD_WR_OFS     0x7C   // Write the offset value
-#define CMD_WR_XTALK   0x7D   // Write the crosstalk value
+#define CMD_CALI_XTALK 0xFA   // Perform crosstalk calibration
+#define CMD_CALI_OFS   0xFB   // Perform offset calibration
+#define CMD_WR_OFS     0x7C   // Write the offset value manually
+#define CMD_WR_XTALK   0x7D   // Write the crosstalk value manually
 #define CMD_RD_VAR     0xF0   // Get the module status information, for the engineering debug
 #define CMD_RESET      0xF5   // Sensor reset
 
