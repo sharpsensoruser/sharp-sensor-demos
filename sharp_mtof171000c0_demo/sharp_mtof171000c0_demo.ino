@@ -207,8 +207,6 @@ void readDataPacket() {
   int cmd = readSerial();
   if ( cmd == CMD_RD_MM ) {
     readDistance();
-  } else if ( cmd == CMD_CALI_XTALK || cmd == CMD_CALI_OFS ) {
-    readCommand(cmd, 4);
   }
 }
 
@@ -227,15 +225,6 @@ void setup() {
 
   // Wait two seconds for startup.
   delay(2000);
-
-  // Test sending some commands.
-  //Serial.println("Send CMD_CALI_XTALK");
-  //sendCommand(CMD_CALI_XTALK, 4);
-  //Serial.println("Send CMD_CALI_OFS");
-  //sendCommand(CMD_CALI_OFS, 4);
-  //Serial.println("Send CMD_RESET");
-  //sendCommand(CMD_RESET, 0);
-  //delay(500);
 }
 
 // Arduino main loop.
