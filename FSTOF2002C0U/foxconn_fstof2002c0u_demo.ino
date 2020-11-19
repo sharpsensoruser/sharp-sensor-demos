@@ -130,7 +130,7 @@ void send_CMD_RD_VERSION_INFO() {
 void readVersionInfo() {
   // Read the Data Length.
   int dataLength = readSerial();
-  if ( dataLength != 0x03 )
+  if ( dataLength < 3 )
     return;
 
   // Read the sensor_ic type.
