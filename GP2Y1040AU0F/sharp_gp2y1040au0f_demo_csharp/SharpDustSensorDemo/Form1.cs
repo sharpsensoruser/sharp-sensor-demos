@@ -46,9 +46,10 @@ namespace SharpDustSensorDemo
                 this.portsComboBox.SelectedIndex = this.portsComboBox.Items.Count - 1;
             }
 
-            // Start the read write thread.
-            this.serialPortThread = new Thread(ReadWriteSerialThread);
-            this.serialPortThread.Start();
+            // Start the timer.
+            this.timer.Interval = 1000;
+            this.timer.Tick += new EventHandler(timer_Tick);
+            this.timer.Start();
         }
         #endregion Constructor
 
@@ -58,9 +59,10 @@ namespace SharpDustSensorDemo
         private const int CMD_FRAME_1 = 0x42;
         private const int CMD_FRAME_2 = 0x4D;
 
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+
         private SerialPort serialPort = null;
         private StreamWriter logFile = null;
-        private Thread serialPortThread = null;
         private string serialWriteText = string.Empty;
         private int writeCount = 0;
         #endregion Private members
@@ -319,48 +321,44 @@ namespace SharpDustSensorDemo
         }
 
         /// <summary>
-        /// Implements the thread which does the reading and writing to COM port.
+        /// Handle the reading and writing to COM port.
         /// </summary>
-        private void ReadWriteSerialThread()
+        private void HandleReadWriteSerial()
         {
-            while (true)
+            // Check if COM port is open.
+            if (!this.serialPort.IsOpen)
             {
-                // Check if COM port is open.
-                if (!this.serialPort.IsOpen)
-                {
-                    Thread.Sleep(500);
-                    continue;
-                }
+                return;
+            }
 
-                // Check if we need to do a Send.
-                if (!string.IsNullOrEmpty(this.serialWriteText))
+            // Check if we need to do a Send.
+            if (!string.IsNullOrEmpty(this.serialWriteText))
+            {
+                WriteToLog("---");
+                WriteToLog("Send Cmd Data (HEX): " + this.serialWriteText);
+                if (!WriteSerial(this.serialWriteText))
                 {
-                    WriteToLog("---");
-                    WriteToLog("Send Cmd Data (HEX): " + this.serialWriteText);
-                    if (!WriteSerial(this.serialWriteText))
-                    {
-                        WriteToLog("Send Cmd Data (HEX): Invalid command data format");
-                    }
-                    FlushLogFile();
-                    this.serialWriteText = string.Empty;
-                    continue;
+                    WriteToLog("Send Cmd Data (HEX): Invalid command data format");
                 }
+                FlushLogFile();
+                this.serialWriteText = string.Empty;
+                return;
+            }
 
-                // Read frame and handle accordingly.
-                int frame = ReadSerialByte();                
-                if (frame == START_FRAME_1)
+            // Read frame and handle accordingly.
+            int frame = ReadSerialByte();                
+            if (frame == START_FRAME_1)
+            {
+                if ( !ReadAirQualityData() )
                 {
-                    if ( !ReadAirQualityData() )
-                    {
-                        WriteToLog("Read Air Data (HEX): Invalid air quality data format");
-                    }
+                    WriteToLog("Read Air Data (HEX): Invalid air quality data format");
                 }
-                else if (frame == CMD_FRAME_1)
+            }
+            else if (frame == CMD_FRAME_1)
+            {
+                if ( !ReadCommandData() )
                 {
-                    if ( !ReadCommandData() )
-                    {
-                        WriteToLog("Read Cmd Data (HEX): Invalid command data format");
-                    }
+                    WriteToLog("Read Cmd Data (HEX): Invalid command data format");
                 }
             }
         }
@@ -400,6 +398,11 @@ namespace SharpDustSensorDemo
         #endregion Private methods
 
         #region Event handlers
+        private void timer_Tick(Object sender, EventArgs e)
+        {
+            HandleReadWriteSerial();
+        }
+
         private void connectButton_Click(object sender, EventArgs e)
         {
             // Check if the port is already open.
@@ -435,8 +438,8 @@ namespace SharpDustSensorDemo
                 this.serialPort.ReadBufferSize = 250000000;
 
                 // Set the read/write timeouts.
-                this.serialPort.ReadTimeout = 500;
-                this.serialPort.WriteTimeout = 500;
+                this.serialPort.ReadTimeout = 50;
+                this.serialPort.WriteTimeout = 250;
 
                 // Open the port.
                 this.serialPort.Open();
@@ -563,9 +566,8 @@ namespace SharpDustSensorDemo
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Stop the read/write thread.
-            if (this.serialPortThread != null)
-                this.serialPortThread.Abort();
+            // Stop the timer.
+            this.timer.Stop();
 
             // Flush and then close the log file.
             FlushLogFile();
