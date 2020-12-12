@@ -109,6 +109,8 @@ In the circuit, the hardware serial port is used only for printing output distan
 
 The [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/FSTOF2002C0U/foxconn_fstof2002c0u_demo.ino) shows how to request a distance measurement by sending the **0x81** command code to the TOF module, process the returned data from the module, and then display the distance in millimetre units on the Serial Monitor.
 
+_This Arduino code should also work for the Foxconn FSTOF2003C0U (short ranging) TOF module since it has the same UART interface and specification._
+
 ![Arduino circuit photo](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/foxconn_fstof2002c0u_circuitphoto.png)
 
 ### Example Serial Monitor Output
@@ -116,6 +118,22 @@ The [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blo
 If you are switching between different Arduino boards, make sure you go to the Arduino IDE **Tools** menu and set **Board** and **Port** appropriately before compiling or uploading the code. The following screen capture shows example output from the TOF module as displayed on the Arduino Serial Monitor.
 
 ![Example serial monitor output](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/foxconn_fstof2002c0u_monitor.png)
+
+## Using FSTOF2002C0U with Windows Application
+
+There are two standalone Windows applications you can use to control FSTOF2002C0U / FSTOF2003C0U from a PC. In both cases, you will need a FT232RL serial-to-USB adapter and USB cable to connect the TOF module to your PC.
+
+### Windows application #1 - TofDemoShow
+
+This is a [vendor-provided Windows application](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/bin) to control FSTOF2002C0U / FSTOF2003C0U.
+
+![TofDemoShow app](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/foxconn_fstof2002c0u_tofdemoshow_app.png)
+
+### Windows application #2 - FoxconnTofModuleDemo with C#/.NET source code
+
+This is a [C#/.NET Windows Forms application](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/FSTOF2002C0U/foxconn_fstof2002c0u_demo_csharp) for controlling Foxconn FSTOF2002C0U / FSTOF2003C0U time-of-flight sensor modules.
+
+![Foxconn Tof Module CSharp Demo App Screen](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/foxconn_fstof2002c0u_csharp_app.png)
 
 ## See also
 * [TOF Module Product Page](http://www.socle-tech.com/Socle_ToF_Module%20.php)
