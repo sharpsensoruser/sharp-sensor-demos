@@ -19,7 +19,6 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.IO.Ports;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace SharpDustSensorDemo
