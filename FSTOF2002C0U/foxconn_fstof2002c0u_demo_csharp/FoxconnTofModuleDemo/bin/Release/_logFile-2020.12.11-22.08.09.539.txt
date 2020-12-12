@@ -1,0 +1,138 @@
+---
+Send Data Packet (HEX): 55 AA 86 00 FA
+---
+Read Data Packet (HEX): 55 AA 86 03 02 41 05 FA
+sensor_ic=0x02 : GP2AP02VT00F
+port=0x41('A') : Firmware supports UART and I2C
+version=5
+---
+Send Data Packet (HEX): 55 AA 85 00 FA
+---
+Read Data Packet (HEX): 55 AA 85 07 20 06 07 F8 7A 03 03 FA
+offset_short1=0x20
+offset_short2=0x06
+offset_long1=0x07
+offset_long2=0xF8
+xtalk_lsb=0x7A
+xtalk_msb=0x03
+factory_calibrated=0x03 : Offset and crosstalk calibration passed
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 3E 00 FA
+Distance=62mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 3D 00 FA
+Distance=61mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 3B 00 FA
+Distance=59mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 3B 00 FA
+Distance=59mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1D 00 FA
+Distance=29mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1D 00 FA
+Distance=29mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1E 00 FA
+Distance=30mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1D 00 FA
+Distance=29mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1C 00 FA
+Distance=28mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1A 00 FA
+Distance=26mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1A 00 FA
+Distance=26mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 1A 00 FA
+Distance=26mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 27 00 FA
+Distance=39mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 27 00 FA
+Distance=39mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 27 00 FA
+Distance=39mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 29 00 FA
+Distance=41mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 2A 00 FA
+Distance=42mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 3B 00 FA
+Distance=59mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 3B 00 FA
+Distance=59mm
+range1_status=0x00
+---
+Send Data Packet (HEX): 55 AA 81 00 FA
+---
+Read Data Packet (HEX): 55 AA 81 03 00 3D 00 FA
+Distance=61mm
+range1_status=0x00
