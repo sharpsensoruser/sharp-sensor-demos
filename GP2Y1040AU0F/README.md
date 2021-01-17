@@ -129,6 +129,7 @@ The following table describes some example UART commands you can send.
 | 0x05 | 0x00 | 0x03 | TPREFAN | Set pre-rotation time of fan to 3 seconds | 42 4D 05 00 03 00 97 |
 | 0x06 | 0xEC | 0x40 | TINTC | Set interval time for auto-cleaning to 60480[10s] | 42 4D 06 EC 40 01 C1 |
 | 0x07 | 0x00 | 0x0A | TCLEAN | Set cleaning time to 10 seconds | 42 4D 07 00 0A 00 A0 |
+| 0x08 | 0x00 | 0x64 | SPEEDFAN | Set fan speed to 100% | 42 4D 08 00 64 00 FB |
 
 Commands to change settings on the sensor such as MAVE or TCLEAN require you to put the sensor into passive mode first. Once you send a "Set" command such as MAVE to the sensor, you will receive back the exact same command (i.e. you will read back the same 7-byte record from the sensor).
 
