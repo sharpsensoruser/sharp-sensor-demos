@@ -199,7 +199,7 @@ void readCommandData(String cmdText, int cmdRegister)
   Wire.endTransmission();
 
   // Request to read 1 byte.
-  Wire.requestFrom(cmdRegister, 1);
+  Wire.requestFrom(SLAVE_ADDRESS, 1);
 
   // Read and print the data value.
   if ( Wire.available() )
