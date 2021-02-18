@@ -64,7 +64,7 @@ The following table shows the pin assignments for GP2Y1040AU0F.
 | 5 | Vcc | Supply Voltage 5V +/-10% |
 | 6 | GND | Ground |
 
-## UART Specification
+## UART Interface
 ### Active versus passive mode
 The GP2Y1040AU0F sensor has two modes of operation: **active** mode and **passive** mode. By default, the sensor is set to active mode which means it will continuously output air quality data records/packets approximately once per second through its TXD transmitting pin. If your application only ever needs to read from the sensor in active mode, you can actually leave the sensor's RXD receiving pin unconnected.
 
@@ -152,6 +152,34 @@ The application has various options for logging the UART data to a log file and 
 ![Sharp GP2Y1040Au0F CSharp Demo App Circuit](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_csharp_circuit.png)
 
 ![Sharp GP2Y1040Au0F CSharp Demo App Screen](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1040au0f_csharp_app.png)
+
+## I2C Interface
+### I2C Slave Address
+The I2C Slave Address of GP2Y1040AU0F is 0x69 (or 105 decimal).
+
+### I2C Registers / Commands
+GP2Y1040AU0F supports the following I2C commands. For more details, refer to the official [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf).
+
+| Address | R/W | Data Length | Cmd Name | Description |
+|---------|-----|-------------|----------|-------------|
+| 0x00 | R | 72 bytes | READ | Read air quality data record |
+| 0x50 | R | 1 byte | SLEEP | Bit 0: 1=New data arrived, 0=New data not arrived |
+| 0x50 | W | 1 byte | SLEEP | Bit 7: 1=Wakeup, 0=Sleep |
+| 0x51 | W | 1 byte | CLEAN | Bit 0: 1=Start cleaning |
+| 0x52 | W | 1 byte | RESET | 0x81=Perform power-on reset |
+| 0x53 | R/W | 1 byte | MAVE | Number of moving averages (1 to 60). Default is 10 |
+| 0x58 | R/W | 1 byte | TINT | Interval time (0 to 59s). Default is 0 |
+| 0x59 | R/W | 1 byte | TPREFAN | Pre-rotation time of fan (0 to 59s). Default is 3 |
+| 0x5A | R/W | 1 byte | TINTC_H | Cleaning interval time, high byte (0 to 60480(10s)). Default is 60480 |
+| 0x5B | R/W | 1 byte | TINTC_L | Cleaning interval time, low byte (0 to 60480(10s)). Default is 60480 |
+| 0x5C | R/W | 1 byte | TCLEAN | Cleaning time (0 to 60s). Default is 10 |
+| 0x63 | R/W | 1 byte | SPEEDFAN | Fan speed control (60 to 100%). Default is 100 |
+
+### I2C Demo: Arduino
+
+For I2C operation, the SEL pin (Pin 3) of the GP2Y1040AU0F sensor must be connected to GND. In addition, the SDA and SCL pins should be connected to external pull-up resistors (e.g. 10Kohms). The SDA/SCL pins use 3.3V logic so you should use a 3.3V-to-5V logic level converter as well in order to connect to Arduino board.
+
+Note that the sensor's READ command returns a data record of 72 bytes in length. But the Arduino Wire library has a fixed I2C buffer size of 32 bytes. So in order for the [I2C demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_i2c.ino) to work, it is necessary to make a couple of changes to the header files of the Wire library to increase the buffer size. See the code file for the exact changes.
 
 ## See also
 * [Sharp GP2Y1040AU0F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf)
