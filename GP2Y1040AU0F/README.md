@@ -90,7 +90,7 @@ In active mode, GP2Y1040AU0F transmits a UART data record about once every secon
 | 26 | Reserved | - | Reserved for future expansion | - |
 | 27 | CheckSum | unsigned int (8-bit) | Check sum (8 bit) of previous 27 bytes | - |
 
-The number concentration values are in units of 0.1 particles per cubic centimetre. For example, if the NC_03 value is reported as 0x03E8 (= 1000), then corresponding number concentration is 1000 x 0.1 = 100 particles/cm3.
+The number concentration values are in units of 0.1 particles per cubic centimetre. For example, if the NC_03 value is reported as 0x03E8 (= 1000), then the corresponding number concentration is 1000 x 0.1 = 100 particles/cm3.
 
 The PM1_1, PM25_1, and PM10_1 mass concentration values are pre-calibrated by using a *standard particle* such as **KCl** as a model.
 The PM1_2, PM25_2, and PM10_2 mass concentration values are pre-calibrated by using *cigarette smoke* as a model. If these models are different from the types of particles you are measuring, you can do the calibration yourself by starting with the number concentrations (which are essentially particle counts) and calculating the corresponding PM values yourself. For example, on a graph you can plot number concentration values on the X-axis and mass concentration values on the Y-axis in units of ug/m3. The Y-axis values can be determined by yourself using your own particle model or by referencing an already calibrated air quality monitor such as TSI DustTrak II 8530.
@@ -183,4 +183,5 @@ Note that the sensor's READ command returns a data record of 72 bytes in length.
 
 ## See also
 * [Sharp GP2Y1040AU0F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf)
+* [Sharp GP2Y1040AU0F Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1040AU0F_ApplicationNote_20201204.pdf)
 * [Sharp Dust Sensors Lineup](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php)
