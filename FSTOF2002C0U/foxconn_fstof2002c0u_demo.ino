@@ -10,6 +10,10 @@
 //
 // Serial monitor setting:
 //   9600 baud 8-N-1
+//
+// This demo code is also applicable to:
+//   FSTOF2002C0D - Module with mounting holes and 6-pin connector
+//   FSTOF2003C0U - Module for short distance with 4-pin connector
 /////////////////////////////////////////////////////////////////////////////
 
 #include <SoftwareSerial.h>
