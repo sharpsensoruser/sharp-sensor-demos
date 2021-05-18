@@ -1,7 +1,7 @@
 # README
 ## FoxconnTofModuleDemo
 
-This is a C#/.NET Windows Forms application for controlling Foxconn FSTOF2002C0U / FSTOF2003C0U time-of-flight sensor modules. The TOF module must be connected to a FT232RL serial-to-USB adapter which connects to your Windows PC. The USB adapter must support 3.3V RX/TX and 3.3V supply voltage.
+This is a C#/.NET Windows Forms application for controlling Foxconn FSTOF2002C0U / FSTOF2002C0D / FSTOF2003C0U time-of-flight sensor modules. The TOF module must be connected to a FT232RL serial-to-USB adapter which connects to your Windows PC. The USB adapter must support 3.3V RX/TX and 3.3V supply voltage.
 
 The application has various options for logging the UART data to a log file and to the screen.
 
