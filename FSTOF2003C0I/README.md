@@ -54,7 +54,7 @@ The FSTOF2003C0I cover lens gives it a standard Field-of-View (FOV) of **25 degr
 
 ### I2C Slave Address
 
-The I2C Slave Address of the TOF Module is 0x36 (54 decimal).
+The I2C slave address of the TOF module is 0x36 (54 decimal).
 
 ### I2C Data Packet Format
 
