@@ -3,7 +3,7 @@
 //   Form1.cs
 //
 // Board Connection:
-//   Serial-to-USB   FSTOF2002C0U / FSTOF2003C0U
+//   Serial-to-USB   FSTOF2002C0U / FSTOF2002C0D / FSTOF2003C0U
 //   3.3V            Pin 1 - VDD
 //   GND             Pin 2 - GND
 //   3.3V RX         Pin 3 - TXD
