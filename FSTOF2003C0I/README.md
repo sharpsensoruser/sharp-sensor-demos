@@ -52,6 +52,10 @@ Note that JCTC connectors may be difficult to source in North America. As an alt
 
 The FSTOF2003C0I cover lens gives it a standard Field-of-View (FOV) of **25 degrees**, which is suitable for a wide range of applications such as user or object detection. 
 
+### I2C Slave Address
+
+The I2C Slave Address of the TOF Module is 0x36 (54 decimal).
+
 ### I2C Data Packet Format
 
 Command codes and data bytes are received from the TOF module using the following data packet format.
