@@ -12,13 +12,13 @@ The **TOF Module** has an on-board MCU, includes a cover lens for the TOF sensor
 
 The TOF Module is also available in a UART version instead of I2C. The following table summarizes the different versions of the TOF module that are available.
 
-| TOF Module | Distance Range|TOF Sensor|Interface|
-|-------------|-------------|-------------|---------|
-|FSTOF2002C0U|10cm to 240cm (white card)|Sharp GP2AP02VT00F|UART|
-|FSTOF2002C0I|10cm to 240cm (white card)|Sharp GP2AP02VT00F|I2C|
-|FSTOF2002C0D|10cm to 240cm (white card)|Sharp GP2AP02VT00F|UART / I2C|
-|FSTOF2003C0U|1cm to 30cm (white card)|Sharp GP2AP03VT00F|UART|
-|FSTOF2003C0I|1cm to 30cm (white card)|Sharp GP2AP03VT00F|I2C|
+| TOF Module | Distance Range|TOF Sensor|Connector|Interface|
+|------------|---------------|----------|---------|---------|
+|FSTOF2002C0U|10cm to 240cm (white card)|Sharp GP2AP02VT00F|4-pin|UART|
+|FSTOF2002C0I|10cm to 240cm (white card)|Sharp GP2AP02VT00F|4-pin|I2C|
+|FSTOF2002C0D|10cm to 240cm (white card)|Sharp GP2AP02VT00F|6-pin|UART / I2C|
+|FSTOF2003C0U|1cm to 30cm (white card)|Sharp GP2AP03VT00F|4-pin|UART|
+|FSTOF2003C0I|1cm to 30cm (white card)|Sharp GP2AP03VT00F|4-pin|I2C|
 
 *FSTOF2002C0D is a new model with mounting holes and 6-pin connector to support both UART and I2C interface.*
 
