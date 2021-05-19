@@ -7,6 +7,10 @@
 //   GND       Pin 2 - GND
 //   SDA       Pin 3 - SDA   Use 3.3V logic level converter
 //   SCL       Pin 4 - SCL   Use 3.3V logic level converter
+//
+// This demo code is also applicable to:
+//   FSTOF2002C0D - Module with mounting holes and 6-pin connector
+//   FSTOF2002C0I - Module for long distance with 4-pin connector
 /////////////////////////////////////////////////////////////////////////////
 
 #include <Wire.h>
