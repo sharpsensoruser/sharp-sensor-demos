@@ -16,7 +16,7 @@
 //   9600 baud
 //
 // References:
-//   https://www.mouser.com/datasheet/2/365/GP2Y1023AU0F_spec_ED14G011A-1288370.pdf
+//   http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1023AU0F.pdf
 //   https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Sharp%20GP2Y1010AU0F%20-%20Dust%20Density%20Conversion.pdf
 /////////////////////////////////////////////////////////////////////////////
 
