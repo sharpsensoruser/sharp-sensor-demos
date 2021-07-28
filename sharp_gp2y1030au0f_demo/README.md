@@ -3,7 +3,9 @@ Sharp GP2Y1030AU0F Dust Sensor Application Guide
 
 ## Overview
 <img align="right" src="https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1030au0f_img.png"></img>
-**GP2Y1030AU0F** is one of the newer models in Sharp's lineup of PM (particulate matter) **dust sensors**. Designed for use in home air purifiers, GP2Y1030AU0F is a digital **UART** sensor featuring a built-in microcomputer (MCU) with the ability to output particle counts for different ranges of dust sizes. Sharp GP2Y1030AU0F incorporates a built-in LED pulse drive circuit, automatic temperature correction, and a removable panel which allows for some internal cleaning.
+Designed for use in home air purifiers, **GP2Y1030AU0F** is a digital **UART** sensor featuring a built-in microcomputer (MCU) with the ability to output particle counts for different ranges of dust sizes. Sharp GP2Y1030AU0F incorporates a built-in LED pulse drive circuit, automatic temperature correction, and a removable panel which allows for some internal cleaning.
+
+_**Note**: It may be difficult to find this Sharp model in stock anywhere because Sharp is currently focusing promotion efforts on the newer GP2Y1040AU0F laser particle sensor model._
 
 ## How do Sharp dust sensors work?
 Sharp dust sensors operate on the principle of **light scattering**. A photo-detector and LED emitter oppose each other at an angle within the rectangular package of the sensor which has a **dust through hole** on either side. Air containing dust particles flows into the sensor chamber and causes the light from the LED emitter to be scattered towards the photo-detector. The more dust there is inside the sensor chamber, the greater the intensity of the scattered light. 
