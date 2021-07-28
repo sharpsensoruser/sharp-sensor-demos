@@ -64,6 +64,9 @@ The following table shows the pin assignments for GP2Y1040AU0F.
 | 5 | Vcc | Supply Voltage 5V +/-10% |
 | 6 | GND | Ground |
 
+_**Note**: JCTC connectors may be hard to find in North America. As an alternative you can try to use JST 0.8mm pitch 6-pin connector which should be compatible with JCTC. You can usually find JST cable assemblies on EBAY for just a few dollars._
+
+
 ## UART Interface
 ### Active versus passive mode
 The GP2Y1040AU0F sensor has two modes of operation: **active** mode and **passive** mode. By default, the sensor is set to active mode which means it will continuously output air quality data records/packets approximately once per second through its TXD transmitting pin. If your application only ever needs to read from the sensor in active mode, you can actually leave the sensor's RXD receiving pin unconnected.
@@ -179,8 +182,11 @@ GP2Y1040AU0F supports the following I2C commands. For more details, refer to the
 
 For I2C operation, the SEL pin (Pin 3) of the GP2Y1040AU0F sensor must be connected to GND. In addition, the SDA and SCL pins should be connected to external pull-up resistors (e.g. 10Kohms). The SDA/SCL pins use 3.3V logic so you should use a 3.3V-to-5V logic level converter as well in order to connect to Arduino board.
 
-Note that the sensor's READ command returns a data record of 72 bytes in length. But the Arduino Wire library has a fixed I2C buffer size of 32 bytes. So in order for the [I2C demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_i2c.ino) to work, it is necessary to make a couple of changes to the header files of the Wire library to increase the buffer size. See the code file for the exact changes.
+Note that the sensor's READ command returns a data record of 72 bytes in length. But the Arduino Wire library has a fixed I2C buffer size of 32 bytes. So in order for the [I2C demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_i2c.ino) to work, it is necessary to make a couple of changes to the header files of the Wire library to increase the buffer size. See the demo source code for the exact changes required.
 
+## Where to find GP2Y1040AU0F ?
+
+This is a newly released model which may not be in stock yet at authorized Sharp distributors such as Mouser Electronics, Digi-Key, etc. However you can still contact Mouser.com directly to make inquiry about purchasing small sample quantity of this sensor. You can also try to send inquiry directly to official Sharp supplier, [Socle Technology](mailto:Socle_Sales_NA@socle-tech.com).
 ## See also
 * [Sharp GP2Y1040AU0F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf)
 * [Sharp GP2Y1040AU0F Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1040AU0F_ApplicationNote_20201204.pdf)
