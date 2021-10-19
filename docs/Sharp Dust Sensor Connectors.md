@@ -43,6 +43,8 @@ Below is the specification for the JCTC **connector terminal**.
 * **Tel**: +1-662-234-1410
 * **URL**: http://www.hayakawaus.com/ 
 
+Or, you can use JST connector instead. Just search for 1.50 mm pitch ZH series 6-pin connector on ebay, it should be easy to find sets of connectors with wires already attached.
+
 ## See also
 
 * [Sharp Dust Sensors Lineup](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php)
