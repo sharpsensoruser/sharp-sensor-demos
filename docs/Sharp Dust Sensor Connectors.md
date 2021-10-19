@@ -43,7 +43,7 @@ Below is the specification for the JCTC **connector terminal**.
 * **Tel**: +1-662-234-1410
 * **URL**: http://www.hayakawaus.com/ 
 
-Or, you can use JST connector instead. Just search for 1.50 mm pitch ZH series 6-pin connector on ebay, it should be easy to find sets of connectors with wires already attached.
+Or, you can use JST connector instead. Just search for JST ZH 1.5mm pitch 6-pin connector on ebay, you should be able to find sets of connectors with wires already attached.
 
 ## See also
 
