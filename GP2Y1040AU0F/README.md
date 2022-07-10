@@ -189,6 +189,6 @@ Note that the sensor's READ command returns a data record of 72 bytes in length.
 You should be able to find small quantities in stock at authorized Sharp distributor Mouser Electronics (mouser.com). You can also try to send inquiry directly to official Sharp supplier, [Socle Technology](mailto:Socle_Sales_NA@socle-tech.com).
 
 ## See also
-* [Sharp GP2Y1040AU0F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf)
-* [Sharp GP2Y1040AU0F Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1040AU0F_ApplicationNote_20201204.pdf)
-* [Sharp Dust Sensors Lineup](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php)
+* [Sharp GP2Y1040AU0F Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf)
+* [Sharp GP2Y1040AU0F Application Note](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y1040AU0F_ApplicationNote_20201204.pdf)
+* [Sharp Dust Sensors Lineup](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php)
