@@ -161,7 +161,7 @@ The application has various options for logging the UART data to a log file and 
 The I2C Slave Address of GP2Y1040AU0F is 0x69 (or 105 decimal).
 
 ### I2C Registers / Commands
-GP2Y1040AU0F supports the following I2C commands. For more details, refer to the official [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf).
+GP2Y1040AU0F supports the following I2C commands. For more details, refer to the official [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf).
 
 | Address | R/W | Data Length | Cmd Name | Description |
 |---------|-----|-------------|----------|-------------|
