@@ -16,7 +16,7 @@
 //   9600 baud
 //
 // References:
-//   http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1023AU0F.pdf
+//   http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y1023AU0F.pdf
 //   https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Sharp%20GP2Y1010AU0F%20-%20Dust%20Density%20Conversion.pdf
 /////////////////////////////////////////////////////////////////////////////
 
