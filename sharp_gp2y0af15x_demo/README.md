@@ -35,7 +35,7 @@ Sharp GP2Y0AF15X uses a **3-pin connector** made by [JCTC (Shenglan Technology C
 
 Connect the GP2Y0AF15X sensor to your Arduino board as shown in the figure below. This example uses **Arduino Uno** but it should work the same with Arduino **Mega 2560**.
 
-**Note:** I haven't done it in my demo, but Sharp recommends that a by-pass capacitor of 10μF or more be connected between Vcc and GND near this sensor to stabilize the power supply line. See the GP2Y0AF15X [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) Section 7-8.
+**Note:** I haven't done it in my demo, but Sharp recommends that a by-pass capacitor of 10μF or more be connected between Vcc and GND near this sensor to stabilize the power supply line. See the GP2Y0AF15X [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) Section 7-8.
 
 ![Arduino circuit](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y0af15x_circuit.png)
 
@@ -45,13 +45,13 @@ The corresponding [demo source code](https://github.com/sharpsensoruser/sharp-se
 
 ### Sensor timing chart
 
-When power is applied to the GP2Y0AF15X sensor, it is necessary to wait until the first measurement is completed before starting to read the output voltage from the sensor. Below is the timing chart from the GP2Y0AF15X [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) which shows that it takes at least 16.5ms + 3.7ms + 5.0ms = **25.2ms** before the output becomes stable.
+When power is applied to the GP2Y0AF15X sensor, it is necessary to wait until the first measurement is completed before starting to read the output voltage from the sensor. Below is the timing chart from the GP2Y0AF15X [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) which shows that it takes at least 16.5ms + 3.7ms + 5.0ms = **25.2ms** before the output becomes stable.
 
 ![Timing chart](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y0af15x_timing.png)
 
 ### Calculating distance from output voltage
 
-Since the GP2Y0AF15X sensor only outputs a voltage value, it is necessary to perform some calculations/calibration in order to determine the actual distance (in millimeters or mm). The GP2Y0AF15X [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) provides an example graph which can be used to derive an equation for calculating distance from voltage. The graph plots **Output voltage (V)** on the Y-axis versus **Distance (mm)** on the X-axis.
+Since the GP2Y0AF15X sensor only outputs a voltage value, it is necessary to perform some calculations/calibration in order to determine the actual distance (in millimeters or mm). The GP2Y0AF15X [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) provides an example graph which can be used to derive an equation for calculating distance from voltage. The graph plots **Output voltage (V)** on the Y-axis versus **Distance (mm)** on the X-axis.
 
 ![Distance graph](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y0af15x_graph.png)
 
@@ -66,7 +66,7 @@ If you are switching between different Arduino boards, make sure you go to the A
 ![Example serial monitor output](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y0af15x_monitor.png)
 
 ## See also
-* Sharp GP2Y0AF15 specifications: [GP2Y0AF15Q](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15Q.pdf) | [GP2Y0AF15R](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15R.pdf) | [GP2Y0AF15X](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) | [GP2Y0AF15Y](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15Y.pdf)
+* Sharp GP2Y0AF15 specifications: [GP2Y0AF15Q](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15Q.pdf) | [GP2Y0AF15R](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15R.pdf) | [GP2Y0AF15X](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15X.pdf) | [GP2Y0AF15Y](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y0AF15Y.pdf)
 * [Distance Sensor Selection Guide](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Distance%20Sensor%20Selection.pdf)
-* [Sharp DMS Product Lineup](http://www.socle-tech.com/SHARP_sensor_Distance%20Measuring%20Sensor.php)
+* [Sharp DMS Product Lineup](http://www.socle-tech.com.tw/SHARP_sensor_Distance%20Measuring%20Sensor.php)
 * [Sharp-World DMS Product Lineup](http://www.sharp-world.com/products/device/lineup/selection/opto/haca/diagram.html)
