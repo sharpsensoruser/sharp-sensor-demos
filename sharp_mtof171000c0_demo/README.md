@@ -33,7 +33,7 @@ By using a different cover lens, the TOF sensor FOV can be changed as needed. Fo
 
 ### TOF Sensor Eye Safety Considerations
 
-The Sharp TOF sensor uses a [Class 1 Laser](https://en.wikipedia.org/wiki/Laser_safety#Class_1) which is safe under conditions of normal use. As per the [specification/datasheet](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/TOF%20Sensor/GP2AP01VT10F_Specification(ED-17G005)_final_w_conf%20For%20normal.pdf) for GP2AP01VT10F, the laser output from the TOF sensor is Class 1 laser safety under all reasonably foreseeable including single faults in compliance with IEC 60825-1:2014. The laser output will remain within Class 1 limits as long as the Sharp recommended device settings are used and the operating conditions specified in the GP2AP01VT10F datasheet are respected. The laser output power must not be increased by any means and no optics should be used with the intention of focusing the laser beam.
+The Sharp TOF sensor uses a [Class 1 Laser](https://en.wikipedia.org/wiki/Laser_safety#Class_1) which is safe under conditions of normal use. As per the [specification/datasheet](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/TOF%20Sensor/GP2AP01VT10F_Specification(ED-17G005)_final_w_conf%20For%20normal.pdf) for GP2AP01VT10F, the laser output from the TOF sensor is Class 1 laser safety under all reasonably foreseeable including single faults in compliance with IEC 60825-1:2014. The laser output will remain within Class 1 limits as long as the Sharp recommended device settings are used and the operating conditions specified in the GP2AP01VT10F datasheet are respected. The laser output power must not be increased by any means and no optics should be used with the intention of focusing the laser beam.
 
 ![TOF senser Class 1 laser safety](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_mtof171000c0_lasersafety.png)
 
@@ -55,7 +55,7 @@ MTOF171000C0 uses a **6-pin connector** made by [JCTC (Shenglan Technology Co. L
 
 ![TOF module connector pins](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_mtof171000c0_connectorpins.png)
 
-Pins 5 and 6 are for **I2C** communication which is not described in this guide. By default, only the UART interface is enabled. I2C support must be enabled via firmware update. You can find more information about the I2C interface from the [MTOF171000C0 Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/ToF%20Module%20MTOF171000C0%20Application%20Notes.pdf).
+Pins 5 and 6 are for **I2C** communication which is not described in this guide. By default, only the UART interface is enabled. I2C support must be enabled via firmware update. You can find more information about the I2C interface from the [MTOF171000C0 Application Note](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/ToF%20Module%20MTOF171000C0%20Application%20Notes.pdf).
 
 Note that JCTC connectors may be difficult to source in North America. As an alternative, try the [JST SH series 1.0mm pitch 6-pin connector](http://www.jst-mfg.com/product/pdf/eng/eSH.pdf) which should be compatible with JCTC. JST connectors are easy to find on ebay and you can purchase a set of 10 JST cable assemblies for just a few dollars.
 
@@ -110,7 +110,7 @@ If you are switching between different Arduino boards, make sure you go to the A
 ![Example serial monitor output](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_mtof171000c0_monitor.png)
 
 ## See also
-* [TOF Module Product Page](http://www.socle-tech.com/Socle_ToF_Module%20.php)
-* [MTOF171000C0 Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/MTOF171000C0%20ToF%20module%20specification.pdf)
-* [MTOF171000C0 Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/ToF%20Module%20MTOF171000C0%20Application%20Notes.pdf)
-* [GP2AP01VT10F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/TOF%20Sensor/GP2AP01VT10F_Specification(ED-17G005)_final_w_conf%20For%20normal.pdf)
+* [TOF Module Product Page](http://www.socle-tech.com.tw/Socle_ToF_Module%20.php)
+* [MTOF171000C0 Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/MTOF171000C0%20ToF%20module%20specification.pdf)
+* [MTOF171000C0 Application Note](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/ToF%20Module%20MTOF171000C0%20Application%20Notes.pdf)
+* [GP2AP01VT10F Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/TOF%20Sensor/GP2AP01VT10F_Specification(ED-17G005)_final_w_conf%20For%20normal.pdf)
