@@ -47,4 +47,4 @@ Or, you can use JST connector instead. Just search for JST ZH 1.5mm pitch 6-pin 
 
 ## See also
 
-* [Sharp Dust Sensors Lineup](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php)
+* [Sharp Dust Sensors Lineup](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php)
