@@ -57,5 +57,5 @@ For testing purposes, I used a third-party humidity and temperature monitor to v
 * Sensor IC brand: Sensirion
 
 ## See also
-* [Sharp A1DU5P2CP006B Specification](http://www.socle-tech.com/SHARP_sensorModule_Humidity&Temperature.php)
-* [ENS210 Datasheet](https://www.sciosense.com/wp-content/uploads/2019/12/ENS210-Datasheet.pdf)
+* [Sharp A1DU5P2CP006B Specification](http://www.socle-tech.com.tw/SHARP_sensorModule_Humidity&Temperature.php)
+* [ENS210 Datasheet](https://www.sciosense.com/wp-content/uploads/documents/SC-000897-DS-7-ENS210-Datasheet.pdf)
