@@ -51,7 +51,7 @@ Note that the **checksum** is computed by summing the four voltage components an
 
 ### Arduino Sketch (demo source code)
 
-The [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo/sharp_gp2y1026au0f_demo.ino) shows how to read in a data frame, verify the checksum, and calculate the **output voltage**. A linear calibration **coefficient "a"** is then applied which converts the output voltage into a **dust density** value. The "a" coefficient is set by default to approximate the following graph from the GP2Y1026AU0F [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1026AU0F%20SPECIFICATION.pdf).
+The [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1026au0f_demo/sharp_gp2y1026au0f_demo.ino) shows how to read in a data frame, verify the checksum, and calculate the **output voltage**. A linear calibration **coefficient "a"** is then applied which converts the output voltage into a **dust density** value. The "a" coefficient is set by default to approximate the following graph from the GP2Y1026AU0F [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1026AU0F%20SPECIFICATION.pdf).
 
 ![output voltage vs dust density graph](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1026au0f_graph.png)
 
