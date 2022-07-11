@@ -9,13 +9,13 @@ Sharp A1DU5P2CP005B VOCs Sensor Module Application Guide
 * Air quality monitors
 * Portable / wearable devices
 
-MSNT iS-MM-VOCs-4 is a very compact **MEMS** sensor (3.8 x 3.8 x 1.5mm) which is capable of detecting formaldehyde, CO2, ethanol, and TVOC. In collaboration with MNST, Sharp has released A1DU5P2CP005B as a specific configuration of the sensor in module packaging which can sense 2 of the 4 substances: formaldehyde and TVOC. Other configurations of the sensor are possible and if you are interested in volume production you can contact [Socle Technology Corp.](http://www.socle-tech.com/) which is Sharp's agent in North America, China, and Taiwan.
+MSNT iS-MM-VOCs-4 is a very compact **MEMS** sensor (3.8 x 3.8 x 1.5mm) which is capable of detecting formaldehyde, CO2, ethanol, and TVOC. In collaboration with MNST, Sharp has released A1DU5P2CP005B as a specific configuration of the sensor in module packaging which can sense 2 of the 4 substances: formaldehyde and TVOC. Other configurations of the sensor are possible and if you are interested in volume production you can contact [Socle Technology Corp.](http://www.socle-tech.com.tw/) which is Sharp's agent in North America, China, and Taiwan.
 
 You should be able to find the Sharp module at a component distributor under part number A1DU5P2CP005B.
 
 ## A1DU5P2CP005B Characteristics
 
-Sharp A1DU5P2CP005B is designed to be used indoors. Follow the module [specifications](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_VOCs_A1DU5P2CP005B.pdf) and avoid exposing the sensor to dust, salt, or gases such as SO2, H2S, Cl2 and NH3.
+Sharp A1DU5P2CP005B is designed to be used indoors. Follow the module [specifications](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_VOCs_A1DU5P2CP005B.pdf) and avoid exposing the sensor to dust, salt, or gases such as SO2, H2S, Cl2 and NH3.
 
 ![A1DU5P2CP005B parameters](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_a1du5p2cp005b_parameters.png)
 
@@ -80,7 +80,7 @@ If you are switching between different Arduino boards, make sure you go to the A
 To actually test with some VOCs, you can open the cap of a permanent marker and wave it around near the sensor.
 
 ## See also
-* [Sharp A1DU5P2CP005B Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_VOCs_A1DU5P2CP005B.pdf)
-* [VOCs Sensor Module Product Page](http://www.socle-tech.com/SHARP_sensorModule_VoC.php)
+* [Sharp A1DU5P2CP005B Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_VOCs_A1DU5P2CP005B.pdf)
+* [VOCs Sensor Module Product Page](http://www.socle-tech.com.tw/SHARP_sensorModule_VoC.php)
 * [Understanding Units of Measurement](https://cfpub.epa.gov/ncer_abstracts/index.cfm/fuseaction/display.files/fileID/14285)
 
