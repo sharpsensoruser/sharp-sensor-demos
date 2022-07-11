@@ -27,7 +27,7 @@ The following table summarizes the different versions of the TOF module that are
 
 ### TOF Sensor Eye Safety Considerations
 
-The Sharp TOF sensor uses a [Class 1 Laser](https://en.wikipedia.org/wiki/Laser_safety#Class_1) which is safe under conditions of normal use. As per the [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2AP02VT00F_Specification.pdf) for Sharp GP2AP02VT00F, the laser output from the TOF sensor is Class 1 laser safety under all reasonably foreseeable including single faults in compliance with IEC 60825-1:2014. The laser output will remain within Class 1 limits as long as the Sharp recommended device settings are used and the operating conditions specified in the Sharp GP2AP02VT00F specification are respected. The laser output power must not be increased by any means and no optics should be used with the intention of focusing the laser beam.
+The Sharp TOF sensor uses a [Class 1 Laser](https://en.wikipedia.org/wiki/Laser_safety#Class_1) which is safe under conditions of normal use. As per the [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2AP02VT00F_Specification.pdf) for Sharp GP2AP02VT00F, the laser output from the TOF sensor is Class 1 laser safety under all reasonably foreseeable including single faults in compliance with IEC 60825-1:2014. The laser output will remain within Class 1 limits as long as the Sharp recommended device settings are used and the operating conditions specified in the Sharp GP2AP02VT00F specification are respected. The laser output power must not be increased by any means and no optics should be used with the intention of focusing the laser beam.
 
 ![TOF sensor Class 1 laser safety](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_mtof171000c0_lasersafety.png)
 
@@ -70,7 +70,7 @@ The I2C Specification for FSTOF2002C0D is almost exactly the same as for the 4-p
 * [Arduino demo code for FSTOF2003C0I / FSTOF2002C0D](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/FSTOF2003C0I/foxconn_fstof2003c0i_demo.ino)
 
 ## See also
-* [TOF Module Product Page](http://www.socle-tech.com/Socle_ToF_Module%20.php)
-* [FSTOF2002C0D Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/FSTOF2002C0D%20ToF%20module%20Preliminary%20V1.0.pdf)
-* [FSTOF2002C0D Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/FSTOF200xC0x%20ToF%20module%20Preliminary%20application%20guide_EN.pdf)
-* [GP2AP02VT00F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2AP02VT00F_Specification.pdf)
+* [TOF Module Product Page](http://www.socle-tech.com.tw/Socle_ToF_Module%20.php)
+* [FSTOF2002C0D Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/FSTOF2002C0D%20ToF%20module%20Preliminary%20V1.0.pdf)
+* [FSTOF2002C0D Application Note](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/FSTOF200xC0x%20ToF%20module%20Preliminary%20application%20guide_EN.pdf)
+* [GP2AP02VT00F Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2AP02VT00F_Specification.pdf)
