@@ -24,7 +24,7 @@ The TOF Module is also available in a UART version instead of I2C. The following
 
 ### TOF Sensor Eye Safety Considerations
 
-The Sharp TOF sensor uses a [Class 1 Laser](https://en.wikipedia.org/wiki/Laser_safety#Class_1) which is safe under conditions of normal use. As per the [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2AP03VT00F_Specification.pdf) for Sharp GP2AP03VT00F, the laser output from the TOF sensor is Class 1 laser safety under all reasonably foreseeable including single faults in compliance with IEC 60825-1:2014. The laser output will remain within Class 1 limits as long as the Sharp recommended device settings are used and the operating conditions specified in the Sharp GP2AP03VT00F specification are respected. The laser output power must not be increased by any means and no optics should be used with the intention of focusing the laser beam.
+The Sharp TOF sensor uses a [Class 1 Laser](https://en.wikipedia.org/wiki/Laser_safety#Class_1) which is safe under conditions of normal use. As per the [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2AP03VT00F_Specification.pdf) for Sharp GP2AP03VT00F, the laser output from the TOF sensor is Class 1 laser safety under all reasonably foreseeable including single faults in compliance with IEC 60825-1:2014. The laser output will remain within Class 1 limits as long as the Sharp recommended device settings are used and the operating conditions specified in the Sharp GP2AP03VT00F specification are respected. The laser output power must not be increased by any means and no optics should be used with the intention of focusing the laser beam.
 
 ![TOF sensor Class 1 laser safety](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_mtof171000c0_lasersafety.png)
 
@@ -108,8 +108,8 @@ If you are switching between different Arduino boards, make sure you go to the A
 ![Example serial monitor output](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/foxconn_fstof2003c0i_monitor.png)
 
 ## See also
-* [TOF Module Product Page](http://www.socle-tech.com/Socle_ToF_Module%20.php)
-* [FSTOF2003C0I Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/FSTOF2003C0x%20ToF%20module%20Preliminary%20V4_EN.pdf)
-* [FSTOF2003C0I Application Note](http://www.socle-tech.com/doc/IC%20Channel%20Product/FSTOF200xC0x%20ToF%20module%20Preliminary%20application%20guide_EN.pdf)
-* [GP2AP03VT00F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2AP03VT00F_Specification.pdf)
+* [TOF Module Product Page](http://www.socle-tech.com.tw/Socle_ToF_Module%20.php)
+* [FSTOF2003C0I Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/FSTOF2003C0x%20ToF%20module%20Preliminary%20V4_EN.pdf)
+* [FSTOF2003C0I Application Note](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/FSTOF200xC0x%20ToF%20module%20Preliminary%20application%20guide_EN.pdf)
+* [GP2AP03VT00F Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2AP03VT00F_Specification.pdf)
 
