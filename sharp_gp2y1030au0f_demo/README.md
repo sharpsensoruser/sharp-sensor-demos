@@ -20,7 +20,7 @@ Sharp dust sensors generally output a voltage value that varies with the intensi
 ## Comparing GP2Y1026AU0F and GP2Y1030AU0F 
 ![compare GP2Y1010AU0F and GP2Y1026AU0F](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1030au0f_comparespec.png)
 
-You can find the detailed specifications for both dust sensor models [here](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php).
+You can find the detailed specifications for both dust sensor models [here](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php).
 
 ## Airflow design requirement
 The GP2Y1030AU0F specification indicates that airflow must be provided to the sensor in order for the particle counting to work properly. The sensor will not work if there is only still air. If your application is an air purifier or an air conditioner, you might be able to use the system’s natural airflow for this purpose. Otherwise, you can look at adding a mini 20x20mm or 25x25mm external fan. The GP2Y1030AU0F sensor has a black, plastic side on which the Sharp model number is printed. You can attach a fan to this side of the sensor in order to provide airflow into the **dust through hole** with a speed (at point **b** in the figure below) of 0.5 m/s to 3.0 m/s. Most fans have a CFM (cubic feet per minute) rating but there are some [converters](http://www.comairrotron.com/airflow-unit-conversion) which you may be able to use to convert to units of m/s.
@@ -85,9 +85,9 @@ If you are switching between different Arduino boards, make sure you go to the *
 ![serial monitor output](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1030au0f_monitor.png)
 
 ## See also
-* [Sharp GP2Y1030AU0F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1030AU0F_spec.pdf)
+* [Sharp GP2Y1030AU0F Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1030AU0F_spec.pdf)
 * [Sharp GP2Y1010AU0F Application Note](http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf)
-* [Sharp Dust Sensors Lineup](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php)
+* [Sharp Dust Sensors Lineup](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php)
 * [PM2.5 Monitor with Portable Battery](https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78/quick-solution.html) (search for PM2.5)
 * [Investigating the Use of Commodity Dust Sensors
 for the Embedded Measurement
