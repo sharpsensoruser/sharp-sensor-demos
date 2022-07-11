@@ -21,7 +21,7 @@ Sharp dust sensors operate on the principle of **light scattering**. A photo-det
 
 Both dust sensor models measure the ***total dust density***. This total includes the concentrations of 1 micron particles, 2.5 micron particles, 10 micron particles, etc. In practice though, when the total dust density/concentration reads very high, such as in the presence of cigarette smoke, most of the detected concentration is due to **PM2.5** particles anyways (_PM2.5 means particles with size < 2.5um_). In addition, with these analog output models, there is the further possibility to analyze the output signals in order to distinguish between smoke particles and house dust.
 
-You can find the detailed specifications for both dust sensor models [here](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php).
+You can find the detailed specifications for both dust sensor models [here](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php).
 
 ## Airflow design considerations
 The GP2Y1014AU0F dust sensor does not include any built-in fan to supply **airflow** to the sensor (and note that the specification does not indicate any airflow is required). This can be advantageous in terms of providing flexibility in sensor orientation and positioning. But still, it is a good idea to think about whether you need to design in at least some airflow into your application. Providing some airflow (from a fan, natural convection, or wind) will allow the sensor to react quicker to changes in dust concentration. For example, if your application is an air purifier or an air conditioner, you might be able to use the system’s natural airflow for this purpose. Other options include adding a mini 20x20mm or 25x25mm external fan but this will introduce additional design considerations such as fan reliability, noise, and cost. To summarize, while airflow is not strictly required, it can help the GP2Y1014AU0F sensor to react quicker to changes in dust concentration. 
@@ -39,7 +39,7 @@ Below is a picture of GP2Y1014AU0F with its connector cable attached.
 
 ## Using GP2Y1014AU0F with Arduino
 ### LED Pulse Drive Circuit
-The [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1014AU0F.pdf) for GP2Y1014AU0F isn't very clear about how to hook up the sensor. A better example can be found in the [Application Note](http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf) for the GP2Y1010AU0F model. Both GP2Y1010AU0F and GP2Y1014AU0F require the same circuit consisting of a resistor (150 ohms) and a capacitor (220 uF) designed to pulse the sensor **LED** on and off instead of running it continuously. The LED degrades in intensity over time and pulsing the LED helps to extend its lifetime. The figure below from Sharp's application note (section 6-1) shows an example circuit.
+The [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y1014AU0F.pdf) for GP2Y1014AU0F isn't very clear about how to hook up the sensor. A better example can be found in the [Application Note](http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf) for the GP2Y1010AU0F model. Both GP2Y1010AU0F and GP2Y1014AU0F require the same circuit consisting of a resistor (150 ohms) and a capacitor (220 uF) designed to pulse the sensor **LED** on and off instead of running it continuously. The LED degrades in intensity over time and pulsing the LED helps to extend its lifetime. The figure below from Sharp's application note (section 6-1) shows an example circuit.
 
 ![LED pulse drive circuit](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1010au0f_ledpulsecircuit.png)
 
@@ -92,7 +92,7 @@ The GP2Y1014AU0F sensor outputs a voltage reading which varies linearly with PM/
 
 #### Offset Correction
 
-Even in a perfectly clean, zero dust environment, the GP2Y1014AU0F sensor will output a non-zero voltage value which is called **Voc**. This behavior is actually useful because you can easily tell whether the sensor is working or not. The GP2Y1014AU0F [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1014AU0F.pdf) states that the typical value of Voc is **0.6 Volts**. You can see this offset from a graph of Output voltage (V) versus Dust density (mg/m3) for this sensor (see Y-intercept).
+Even in a perfectly clean, zero dust environment, the GP2Y1014AU0F sensor will output a non-zero voltage value which is called **Voc**. This behavior is actually useful because you can easily tell whether the sensor is working or not. The GP2Y1014AU0F [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y1014AU0F.pdf) states that the typical value of Voc is **0.6 Volts**. You can see this offset from a graph of Output voltage (V) versus Dust density (mg/m3) for this sensor (see Y-intercept).
 
 ![Output voltage versus dust density](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1014au0f_graph.png)
 
@@ -114,10 +114,10 @@ Sharp's [documentation](https://github.com/sharpsensoruser/sharp-sensor-demos/bl
 The [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y1014au0f_demo/sharp_gp2y1014au0f_demo.ino) uses a typical value for **K** of **0.5** Volts/(100 ug/m3). In practice, K should be adjusted according to the calibration procedure described above.
 
 ## See also
-* [Sharp GP2Y1014AU0F Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_GP2Y1014AU0F.pdf)
+* [Sharp GP2Y1014AU0F Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y1014AU0F.pdf)
 * [Sharp GP2Y1010AU0F Application Note](http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y1010au_appl_e.pdf)
 * [Sharp GP2Y1010AU0F - Dust Density Conversion](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Sharp%20GP2Y1010AU0F%20-%20Dust%20Density%20Conversion.pdf)
-* [Sharp Dust Sensors Lineup](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php)
+* [Sharp Dust Sensors Lineup](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php)
 * [PM2.5 Monitor with Portable Battery](https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78/quick-solution.html) (search for PM2.5)
 * [Investigating the Use of Commodity Dust Sensors for the Embedded Measurement of Particulate Matter](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.448.6904&rep=rep1&type=pdf)
 * [Comparative Experimental Evaluation of Dust Sensors for Environmental Monitoring on Construction Sites ](https://www.iaarc.org/publications/fulltext/isarc2014_submission_50.pdf)
