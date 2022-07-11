@@ -80,12 +80,12 @@ The module board has two holes for application mounting. However, the back of th
 
 ### Module Connector
 
-The MWS Module uses a **6-pin connector** made by [JCTC (Shenglan Technology Co. Ltd)](http://www.jctc.com.cn/). The [preliminary datasheet](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_DC6S4XN31XX.pdf) for the module indicates it uses the following JCTC connector part numbers:
+The MWS Module uses a **6-pin connector** made by [JCTC (Shenglan Technology Co. Ltd)](http://www.jctc.com.cn/). The [preliminary datasheet](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_DC6S4XN31XX.pdf) for the module indicates it uses the following JCTC connector part numbers:
 
 * Module-side connector: JCTC 11002W90-6P-S-5A-HF
 * Mating connector housing: JCTC 11002H00-6P-HF
 
-However, the latest [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3101.pdf) for DC6S4ZN3101 indicates the module uses slightly different JCTC part numbers:
+However, the latest [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3101.pdf) for DC6S4ZN3101 indicates the module uses slightly different JCTC part numbers:
 
 * Module-side connector: JCTC 11002W90-6P-S-R
 * Mating connector housing: JCTC 11002H00-6P-2-HF
@@ -180,7 +180,7 @@ Alternatively, you can communicate with the MWS Module using a **software serial
 
 Note that the TX and RX pins of the MWS Module operate on 3.3V logic, so it is necessary to use a logic level converter to convert between 3.3V and the 5V that Arduino uses.
 
-According to the module [specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3101.pdf), unused pins should be connected to GND via a 10 kΩ resistor (not shown in figure).
+According to the module [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3101.pdf), unused pins should be connected to GND via a 10 kΩ resistor (not shown in figure).
 
 ![Arduino Circuit](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_dc6s4zn3101_circuit.png)
 
@@ -202,7 +202,7 @@ The [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blo
 
 * [Using the Sharp Microwave Sensor Demo Kit](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/docs/Using%20the%20Sharp%20Microwave%20Sensor%20Demo%20Kit.md)
 * [Sharp Microwave Sensor Demo Application (C#/.NET Windows Forms)](https://github.com/sharpsensoruser/sharp-sensor-demos/tree/master/sharp_dc6s4zn3101_demo_csharp)
-* [Sharp Microwave Sensor Module Lineup](http://www.socle-tech.com/SHARP_sensorModule_NoncontactBodyMotionSensorModule.php)
-* [Sharp DC6S4ZN3101 Preliminary Datasheet](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_DC6S4XN31XX.pdf)
-* [Sharp DC6S4ZN3101 Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3101.pdf)
-* [Sharp DC6S4ZN3102 Specification](http://www.socle-tech.com/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3102.pdf)
+* [Sharp Microwave Sensor Module Lineup](http://www.socle-tech.com.tw/SHARP_sensorModule_NoncontactBodyMotionSensorModule.php)
+* [Sharp DC6S4ZN3101 Preliminary Datasheet](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_DC6S4XN31XX.pdf)
+* [Sharp DC6S4ZN3101 Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3101.pdf)
+* [Sharp DC6S4ZN3102 Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_DC6S4ZN3102.pdf)
