@@ -32,8 +32,12 @@ static SoftwareSerial mySerial(rxPin, txPin);
 // Starting bytes of UART data record.
 #define START_FRAME_1 0xFF
 #define START_FRAME_2 0xFA
-#define CMD_FRAME_1   0x42
-#define CMD_FRAME_2   0x4D
+
+// Starting bytes of UART cmd record.
+#define CMD_FRAME_1_OLD 0x42 // Old start byte for UART cmds
+#define CMD_FRAME_1_NEW 0xA1 // New start byte (Sharp spec change from Sep 9, 2022)
+#define CMD_FRAME_1     CMD_FRAME_1_NEW 
+#define CMD_FRAME_2     0x4D
         
 // Store UART raw data frame bytes and calculated field values.
 static uint8_t frames[28];
@@ -145,10 +149,10 @@ void readAirQualityData() {
 }
 
 // Read the rest of command record following the first cmd frame.
-void readCommandData()
+void readCommandData(uint8_t firstFrame)
 {
   // Set the 1st cmd frame since we already read it.
-  frames[0] = CMD_FRAME_1;
+  frames[0] = firstFrame;
 
   // Look for the 2nd cmd frame.
   int data = readSerial();
@@ -179,18 +183,18 @@ void readCommandData()
 // Send UART command data to sensor.
 //
 // Examples of the 7-bytes of commmand data:
-//   READ: Read data in passive mode: 42 4D E2 00 00 01 71
-//   MODE: Switch to passive mode: 42 4D E1 00 00 01 70
-//   MODE: Switch to active mode: 42 4D E1 00 01 01 71
-//   SLEEP: Go to sleep: 42 4D E4 00 00 01 73
-//   SLEEP: Wake up: 42 4D E4 00 01 01 74
-//   CLEAN: Start cleaning: 42 4D 01 00 00 00 90
-//   RESET: Software reset: 42 4D 02 81 00 01 12
-//   MAVE: Set number of moving averages to 10: 42 4D 03 00 0A 00 9C
-//   TINT: Set interval time to 0 seconds: 42 4D 04 00 00 00 93
-//   TPREFAN: Set pre-rotation time of fan to 3 seconds: 42 4D 05 00 03 00 97
-//   TINTC: Set interval time for auto-cleaning to 60480[10s]: 42 4D 06 EC 40 01 C1
-//   TCLEAN: Set cleaning time to 10 seconds: 42 4D 07 00 0A 00 A0      
+//   READ: Read data in passive mode: A1 4D E2 00 00 01 71
+//   MODE: Switch to passive mode: A1 4D E1 00 00 01 70
+//   MODE: Switch to active mode: A1 4D E1 00 01 01 71
+//   SLEEP: Go to sleep: A1 4D E4 00 00 01 73
+//   SLEEP: Wake up: A1 4D E4 00 01 01 74
+//   CLEAN: Start cleaning: A1 4D 01 00 00 00 90
+//   RESET: Software reset: A1 4D 02 81 00 01 12
+//   MAVE: Set number of moving averages to 10: A1 4D 03 00 0A 00 9C
+//   TINT: Set interval time to 0 seconds: A1 4D 04 00 00 00 93
+//   TPREFAN: Set pre-rotation time of fan to 3 seconds: A1 4D 05 00 03 00 97
+//   TINTC: Set interval time for auto-cleaning to 60480[10s]: A1 4D 06 EC 40 01 C1
+//   TCLEAN: Set cleaning time to 10 seconds: A1 4D 07 00 0A 00 A0      
 void sendCommandData(uint8_t cmd, uint16_t dataValue)
 {
   uint8_t buf[7];
@@ -200,6 +204,10 @@ void sendCommandData(uint8_t cmd, uint16_t dataValue)
   buf[3] = (uint8_t)((dataValue & 0xFF00) >> 8);
   buf[4] = (uint8_t)(dataValue & 0x00FF);
   uint16_t checksum = buf[0] + buf[1] + buf[2] + buf[3] + buf[4];
+  if ( CMD_FRAME_1 == CMD_FRAME_1_NEW )
+  {
+    checksum -= 0x5F; // According to Sharp Application Note Rev 1.1 dated May 17, 2022
+  }
   buf[5] = (uint8_t)((checksum & 0xFF00) >> 8);
   buf[6] = (uint8_t)(checksum & 0x00FF);
 
@@ -239,7 +247,8 @@ void loop() {
   // Test sending some cmds.
   #ifdef TEST_SEND_CMDS
   counter++;
-  if ( counter == 10 ) {
+  if ( counter == 10 )
+  {
     sendCommandData(0xE1, 0);    // Switch to passive mode
     sendCommandData(0x03, 10);   // Set number of moving averages to 10    
     sendCommandData(0xE2, 0);    // Read air data in passive mode    
@@ -255,9 +264,9 @@ void loop() {
   {
     readAirQualityData();
   }
-  else if (frame == CMD_FRAME_1)
+  else if (frame == CMD_FRAME_1_OLD || frame == CMD_FRAME_1_NEW)
   {
-    readCommandData();
+    readCommandData(frame);
   }
   
   delay(100);
