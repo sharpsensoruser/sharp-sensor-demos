@@ -136,6 +136,14 @@ The following table describes some example UART commands you can send.
 
 Commands to change settings on the sensor such as MAVE or TCLEAN require you to put the sensor into passive mode first. Once you send a "Set" command such as MAVE to the sensor, you will receive back the exact same command (i.e. you will read back the same 7-byte record from the sensor).
 
+### UART commands specification change ###
+
+In the latest GP2Y1040AU0F [specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf) and [application note](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_ApplicationNote_Ref1d1.pdf), the first start byte of a UART command is changed from **0x42** to **0xA1**. As explained by Sharp, this is just a documentation change and there has been no change to the sensor firmware. So you should be able to continue using 0x42 without any issue. The formula for calculating the UART command checksum is unchanged : **CheckSum = 0x42 + 0x4D + CMD + DATAH + DATAL**.
+
+However, the checksum can also be expressed in a different way using the new start byte : **CheckSum = 0xA1 + 0x4D + CMD + DATAH + DATAL - 0x5F**. Mathematically, this way of expressing the checksum is identical to the original formula (because 0xA1 - 0x5F = 0x42).
+
+Another observation to note is that if you issue one of the UART commands that sets a parameter value using 0xA1 as the start byte, the returned command will have a start byte of 0x42 for some reason.
+
 ### UART Demo: Arduino
 
 In this [demo source code](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/GP2Y1040AU0F/sharp_gp2y1040au0f_demo_uart.ino), the Arduino hardware serial port is used only for printing output to the Arduino Serial Monitor at 9600 baud. The actual UART communication with the GP2Y1040AU0F sensor is done through a software serial port connected to Arduino digital pins 10 and 11. However, because the Arduino digital pins use 5V while the GP2Y1040AU0F TXD and RXD pins use 3.3V logic, it is necessary to use a 3.3V-to-5V logic level converter in the circuit. The following figure shows the connections using Arduino Uno.
@@ -190,5 +198,6 @@ You should be able to find small quantities in stock at authorized Sharp distrib
 
 ## See also
 * [Sharp GP2Y1040AU0F Specification](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_spec.pdf)
-* [Sharp GP2Y1040AU0F Application Note](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y1040AU0F_ApplicationNote_20201204.pdf)
+* [Sharp GP2Y1040AU0F Application Note - Rev 1.1](http://www.socle-tech.com/doc/IC%20Channel%20Product/Sensors/Dust%20Sensor/GP2Y1040AU0F_ApplicationNote_Ref1d1.pdf)
+* [Sharp GP2Y1040AU0F Application Note - Rev 1.0](http://www.socle-tech.com.tw/doc/IC%20Channel%20Product/SHARP_GP2Y1040AU0F_ApplicationNote_20201204.pdf)
 * [Sharp Dust Sensors Lineup](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php)
