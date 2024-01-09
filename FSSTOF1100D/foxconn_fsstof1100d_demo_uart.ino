@@ -13,6 +13,10 @@
 //
 // References:
 //   Online CRC-16 Modbus calculator: https://www.tahapaksu.com/crc/
+//
+// This demo code is also applicable to:
+//   FSSTOF52000D - TOF Module with range 5cm to 200cm
+//   FSSTOF54500D - TOF Module with range 5cm to 450cm
 /////////////////////////////////////////////////////////////////////////////
 
 #include <SoftwareSerial.h>
@@ -54,6 +58,16 @@ static SoftwareSerial mySerial(rxPin, txPin);
 #define VERSION_READ_NUMREGISTERS 0x02
 #define VERSION_READ_CRC16_LOW    0xF0
 #define VERSION_READ_CRC16_HIGH   0x1D
+
+// Ranging status values (same as Sharp GP2AP03VT00F TOF Sensor).
+#define RANGING_STATUS_VALID_DATA      0x00
+#define RANGING_STATUS_VCSEL_SHORT     0x01
+#define RANGING_STATUS_LOW_SIGNAL      0x02
+#define RANGING_STATUS_LOW_SN          0x04
+#define RANGING_STATUS_TOO_MUCH_AMB    0x08
+#define RANGING_STATUS_WAF             0x10
+#define RANGING_STATUS_CAL_ERROR       0x20  
+#define RANGING_STATUS_CROSSTALK_ERROR 0x80
 
 /////////////////////////////////////////////////////////////////////////////
 
