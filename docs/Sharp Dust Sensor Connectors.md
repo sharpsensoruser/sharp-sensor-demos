@@ -2,7 +2,7 @@
 
 ## JST Connector
 
-Sharp dust sensor models which have been in production for a few years, such as **GP2Y1010AU0F** and **GP2Y1014AU0F**, originally used the 6-pin **S6B-ZR-SM4A** connector (1.50 mm pitch ZH series) from [JST (Japan Solderless Terminal Co. Ltd)](http://www.jst.com/index.html), as evidenced by the below excerpt from the original GP2Y1010AU0F specification.
+Sharp dust sensor models which have been in production for a few years, such as **GP2Y1010AU0F** and **GP2Y1014AU0F**, originally used the 6-pin **S6B-ZR-SM4A** connector (1.50 mm pitch ZH series) from [JST (Japan Solderless Terminal Co. Ltd)](https://www.jst-mfg.com/index_e.php), as evidenced by the below excerpt from the original GP2Y1010AU0F specification.
 
 ![GP2Y1010AU0F old connector spec](https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/images/sharp_gp2y1010au0f_connector.png)
 
@@ -47,4 +47,4 @@ Or, you can use JST connector instead. Just search for JST ZH 1.5mm pitch 6-pin 
 
 ## See also
 
-* [Sharp Dust Sensors Lineup](http://www.socle-tech.com.tw/SHARP_sensor_Dust%20Sensor.php)
+* [Sharp Dust Sensors Lineup](http://www.socle-tech.com/SHARP_sensor_Dust%20Sensor.php)
